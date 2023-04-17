@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Projekt", "Projekt\Projekt.vcxproj", "{CBB61C18-C617-4922-AD92-FA1A782F10C3}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C28BDB75-AC82-4640-B76F-31FFC990CF84}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Projekt", "Projekt\Projekt.vcxproj", "{4EEDA782-FD87-455E-A359-3415EF6A31D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +16,10 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CBB61C18-C617-4922-AD92-FA1A782F10C3}.Debug|x64.ActiveCfg = Debug|x64
-		{CBB61C18-C617-4922-AD92-FA1A782F10C3}.Debug|x64.Build.0 = Debug|x64
-		{CBB61C18-C617-4922-AD92-FA1A782F10C3}.Release|x64.ActiveCfg = Release|x64
-		{CBB61C18-C617-4922-AD92-FA1A782F10C3}.Release|x64.Build.0 = Release|x64
+		{4EEDA782-FD87-455E-A359-3415EF6A31D6}.Debug|x64.ActiveCfg = Debug|x64
+		{4EEDA782-FD87-455E-A359-3415EF6A31D6}.Debug|x64.Build.0 = Debug|x64
+		{4EEDA782-FD87-455E-A359-3415EF6A31D6}.Release|x64.ActiveCfg = Release|x64
+		{4EEDA782-FD87-455E-A359-3415EF6A31D6}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
