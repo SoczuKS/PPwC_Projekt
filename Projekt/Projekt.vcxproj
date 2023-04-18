@@ -99,13 +99,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="App.qrc" />
-    <QtUic Include="App.ui" />
-    <QtMoc Include="App.hpp" />
-    <ClCompile Include="App.cpp" />
-    <ClCompile Include="main.cpp" />
-    <None Include="Projekt.ico" />
-    <ResourceCompile Include="Projekt.rc" />
+    <QtRcc Include="qt\App.qrc" />
+    <QtUic Include="qt\App.ui" />
+    <QtMoc Include="src\App.hpp" />
+    <ClCompile Include="src\App.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <None Include="media\Projekt.ico" />
+    <ResourceCompile Include="qt\Projekt.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
