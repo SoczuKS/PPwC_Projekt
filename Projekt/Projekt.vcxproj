@@ -99,6 +99,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Vehicle.cpp" />
     <QtRcc Include="qt\App.qrc" />
     <QtUic Include="qt\App.ui" />
     <QtMoc Include="src\App.hpp" />
@@ -106,6 +107,9 @@
     <ClCompile Include="src\main.cpp" />
     <None Include="media\Projekt.ico" />
     <ResourceCompile Include="qt\Projekt.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Vehicle.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
