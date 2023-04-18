@@ -21,6 +21,12 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="Header Files\vehicles">
+      <UniqueIdentifier>{91a8489f-4af4-4e2f-ad1e-14ecb1bf0357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vehicles">
+      <UniqueIdentifier>{11190c73-7daf-43a6-b7e2-f0f78715b8b6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="qt\App.qrc">
@@ -47,13 +53,14 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Vehicle.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\vehicles</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\Vehicle.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="src\Car.cpp">
+      <Filter>Source Files\vehicles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Motorcycle.cpp">
+      <Filter>Source Files\vehicles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="locale\locale_en.ts">
@@ -62,5 +69,16 @@
     <QtTranslation Include="locale\locale_pl.ts">
       <Filter>Translation Files</Filter>
     </QtTranslation>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Vehicle.hpp">
+      <Filter>Header Files\vehicles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Car.hpp">
+      <Filter>Header Files\vehicles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Motorcycle.hpp">
+      <Filter>Header Files\vehicles</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
