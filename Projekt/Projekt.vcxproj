@@ -111,6 +111,10 @@
   <ItemGroup>
     <ClInclude Include="src\Vehicle.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <QtTranslation Include="locale\locale_en.ts" />
+    <QtTranslation Include="locale\locale_pl.ts" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />
