@@ -62,7 +62,7 @@
       <Filter>Source Files\vehicles</Filter>
     </ClCompile>
     <ClCompile Include="src\Bike.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\vehicles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
