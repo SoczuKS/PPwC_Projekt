@@ -102,6 +102,7 @@
     <ClCompile Include="src\Bike.cpp" />
     <ClCompile Include="src\Car.cpp" />
     <ClCompile Include="src\Motorcycle.cpp" />
+    <ClCompile Include="src\Scooter.cpp" />
     <ClCompile Include="src\Vehicle.cpp" />
     <QtRcc Include="qt\App.qrc" />
     <QtUic Include="qt\App.ui" />
@@ -115,6 +116,7 @@
     <ClInclude Include="src\Bike.hpp" />
     <ClInclude Include="src\Car.hpp" />
     <ClInclude Include="src\Motorcycle.hpp" />
+    <ClInclude Include="src\Scooter.hpp" />
     <ClInclude Include="src\Vehicle.hpp" />
   </ItemGroup>
   <ItemGroup>
