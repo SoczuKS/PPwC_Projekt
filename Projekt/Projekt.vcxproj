@@ -102,6 +102,7 @@
     <ClCompile Include="src\Bike.cpp" />
     <ClCompile Include="src\Car.cpp" />
     <ClCompile Include="src\Motorcycle.cpp" />
+    <ClCompile Include="src\MotorizedVehicle.cpp" />
     <ClCompile Include="src\RentalService.cpp" />
     <ClCompile Include="src\Scooter.cpp" />
     <ClCompile Include="src\User.cpp" />
@@ -119,6 +120,7 @@
     <ClInclude Include="src\Bike.hpp" />
     <ClInclude Include="src\Car.hpp" />
     <ClInclude Include="src\Motorcycle.hpp" />
+    <ClInclude Include="src\MotorizedVehicle.hpp" />
     <ClInclude Include="src\RentalService.hpp" />
     <ClInclude Include="src\Scooter.hpp" />
     <ClInclude Include="src\User.hpp" />

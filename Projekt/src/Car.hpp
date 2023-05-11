@@ -1,9 +1,9 @@
 #pragma once
 
 #include <string>
-#include "Vehicle.hpp"
+#include "MotorizedVehicle.hpp"
 
-class Car final : public Vehicle
+class Car final : public MotorizedVehicle
 {
 public:
 	Car() = default;

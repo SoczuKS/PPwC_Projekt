@@ -2,11 +2,20 @@
 
 #include <string>
 
+struct VehicleParameters
+{
+	std::uint16_t productionYear;
+	float pricePerHour;
+	float pricePerDay;
+	std::string manufacturer;
+	std::string model;
+};
+
 class Vehicle
 {
 public:
 	Vehicle() = default;
-	Vehicle(std::string, std::string, std::uint16_t, float, float);
+	Vehicle(const VehicleParameters&);
 	virtual ~Vehicle() = default;
 
 	void setPricePerHour(const float pph)
@@ -40,7 +49,7 @@ public:
 	{
 		manufacturer = std::move(mf);
 	}
-	std::string getManufacturer()
+	std::string getManufacturer() const
 	{
 		return manufacturer;
 	}
@@ -49,7 +58,7 @@ public:
 	{
 		model = std::move(mo);
 	}
-	std::string getModel()
+	std::string getModel() const
 	{
 		return model;
 	}
