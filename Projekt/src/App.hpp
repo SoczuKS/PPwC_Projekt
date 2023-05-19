@@ -2,6 +2,8 @@
 
 #include "ui_App.h"
 
+#include "UserManager.hpp"
+
 class App final : public QMainWindow
 {
 	Q_OBJECT
@@ -12,4 +14,5 @@ public:
 
 private:
 	Ui::AppClass ui;
+	UserManager userManager;
 };

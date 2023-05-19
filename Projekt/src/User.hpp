@@ -1,23 +1,35 @@
 #pragma once
 
 #include <cstdint>
+#include <fstream>
 #include <string>
 
 class User final
 {
 public:
-	enum class Role
+	enum class Role : uint16_t
 	{
-		admin,
-		customer
+		customer = 1,
+		admin = 100
 	};
 
-	User() = default;
+	User(uint64_t, std::string, std::string, Role);
+
+	uint64_t getId() const { return id; }
+
+	std::string getUsername() const { return username; }
+
+	std::string getPasswordHash() const { return passwordHash; }
+
+	friend std::fstream& operator<<(std::fstream& file, const User& user)
+	{
+		file << user.id << ',' << user.username << ',' << user.passwordHash << ',' << static_cast<uint16_t>(user.role);
+		return file;
+	}
 
 private:
-	std::string username;
-	std::string password;
 	uint64_t id;
+	std::string username;
+	std::string passwordHash;
 	Role role;
-
 };

@@ -79,6 +79,9 @@
     <ClCompile Include="src\MotorizedVehicle.cpp">
       <Filter>Source Files\vehicles</Filter>
     </ClCompile>
+    <ClCompile Include="src\UserManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="locale\locale_en.ts">
@@ -115,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="src\MotorizedVehicle.hpp">
       <Filter>Header Files\vehicles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UserManager.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
