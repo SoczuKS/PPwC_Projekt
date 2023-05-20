@@ -4,6 +4,7 @@
 
 struct VehicleParameters
 {
+	uint64_t id;
 	std::uint16_t productionYear;
 	float pricePerHour;
 	float pricePerDay;
@@ -14,9 +15,14 @@ struct VehicleParameters
 class Vehicle
 {
 public:
-	Vehicle() = default;
+	Vehicle() = delete;
 	Vehicle(const VehicleParameters&);
 	virtual ~Vehicle() = default;
+
+	uint64_t getId() const
+	{ 
+		return id;
+	}
 
 	void setPricePerHour(const float pph)
 	{
@@ -66,7 +72,8 @@ public:
 	virtual std::string getDescription() const = 0;
 
 private:
-	std::uint16_t productionYear;
+	const uint64_t id;
+	uint16_t productionYear;
 	float pricePerHour;
 	float pricePerDay;
 	std::string manufacturer;
