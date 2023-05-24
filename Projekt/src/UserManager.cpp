@@ -11,7 +11,7 @@
 #include "User.hpp"
 #include "Utils.hpp"
 
-const std::string UserManager::UsersFilename = "passwd.txt";
+const std::string UserManager::UsersFilename = "data/passwd.txt";
 
 UserManager::UserManager() :
 	randomDevice{ std::random_device() },
