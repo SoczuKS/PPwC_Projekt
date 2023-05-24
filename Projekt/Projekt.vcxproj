@@ -107,6 +107,7 @@
     <ClCompile Include="src\Scooter.cpp" />
     <ClCompile Include="src\User.cpp" />
     <ClCompile Include="src\UserManager.cpp" />
+    <ClCompile Include="src\Utils.cpp" />
     <ClCompile Include="src\VehicleDatabase.cpp" />
     <ClCompile Include="src\Vehicle.cpp" />
     <QtRcc Include="qt\App.qrc" />
@@ -126,6 +127,7 @@
     <ClInclude Include="src\Scooter.hpp" />
     <ClInclude Include="src\User.hpp" />
     <ClInclude Include="src\UserManager.hpp" />
+    <ClInclude Include="src\Utils.hpp" />
     <ClInclude Include="src\VehicleDatabase.hpp" />
     <ClInclude Include="src\Vehicle.hpp" />
   </ItemGroup>

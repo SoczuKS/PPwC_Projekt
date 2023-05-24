@@ -77,34 +77,25 @@ uint64_t UserManager::generateUserId()
 	return id;
 }
 
-bool UserManager::load()
+void UserManager::load()
 {
-	try
-	{
-		std::fstream file(UsersFilename, std::ios::in);
-		std::string line;
+	std::fstream file(UsersFilename, std::ios::in);
+	std::string line;
 
-		while (std::getline(file, line))
+	while (std::getline(file, line))
+	{
+		auto substrings = utils::splitString(line, ',');
+
+		if (4 != substrings.size())
 		{
-			const auto substrings = utils::splitString(line, ',');
-
-			if (substrings.size() != 4)
-			{
-				throw std::exception("Invalid save");
-			}
-
-			users.emplace_back(User{ std::stoull(substrings[0]), substrings[1], substrings[2], static_cast<User::Role>(std::stoi(substrings[3])) });
+			throw std::exception("Invalid save");
 		}
-	}
-	catch (std::exception&)
-	{
-		return false;
-	}
 
-	return true;
+		users.emplace_back(User{ std::stoull(substrings[0]), substrings[1], substrings[2], static_cast<User::Role>(std::stoi(substrings[3])) });
+	}
 }
 
-bool UserManager::save() const
+void UserManager::save() const
 {
 	std::fstream file(UsersFilename, std::ios::out);
 
@@ -112,6 +103,4 @@ bool UserManager::save() const
 	{
 		file << user << '\n';
 	}
-
-	return true;
 }

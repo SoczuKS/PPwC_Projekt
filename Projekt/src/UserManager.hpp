@@ -11,7 +11,7 @@ class User;
 class UserManager final
 {
 public:
-	UserManager();
+	UserManager() noexcept(false);
 	~UserManager();
 
 	std::optional<std::reference_wrapper<User>> registration(std::string, std::string);
@@ -20,8 +20,8 @@ public:
 private:
 	std::string hashPassword(const std::string&) const;
 	uint64_t generateUserId();
-	bool load();
-	bool save() const;
+	void load() noexcept(false);
+	void save() const;
 
 	std::vector<User> users;
 	std::random_device randomDevice;
