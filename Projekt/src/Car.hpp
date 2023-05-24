@@ -13,20 +13,19 @@ public:
 
 	std::string getDescription() const override;
 
-
-	std::fstream& operator<<(std::fstream& file) override
+	friend std::fstream& operator<<(std::fstream& file, const Car& c)
 	{
-		file << pricePerHour
-			<< ',' << pricePerDay
-			<< ',' << productionYear
-			<< ',' << manufacturer
-			<< ',' << model
-			<< ',' << static_cast<int>(drive)
-			<< ',' << static_cast<int>(transmission)
-			<< ',' << engineSpec.capacity
-			<< ',' << engineSpec.power
-			<< ',' << static_cast<int>(engineSpec.fuelType)
-			<< ',' << id;
+		file << c.pricePerHour
+			<< ';' << c.pricePerDay
+			<< ';' << c.productionYear
+			<< ';' << c.manufacturer
+			<< ';' << c.model
+			<< ';' << static_cast<int>(c.drive)
+			<< ';' << static_cast<int>(c.transmission)
+			<< ';' << c.engineSpec.capacity
+			<< ';' << c.engineSpec.power
+			<< ';' << static_cast<int>(c.engineSpec.fuelType)
+			<< ';' << c.id;
 
 		return file;
 	}

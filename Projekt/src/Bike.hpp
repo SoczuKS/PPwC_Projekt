@@ -13,14 +13,14 @@ public:
 
 	std::string getDescription() const override;
 
-	std::fstream& operator<<(std::fstream& file) override
+	friend std::fstream& operator<<(std::fstream& file, const Bike& b)
 	{
-		file << pricePerHour
-			<< ',' << pricePerDay
-			<< ',' << productionYear
-			<< ',' << manufacturer
-			<< ',' << model
-			<< ',' << id;
+		file << b.pricePerHour
+			<< ';' << b.pricePerDay
+			<< ';' << b.productionYear
+			<< ';' << b.manufacturer
+			<< ';' << b.model
+			<< ';' << b.id;
 
 		return file;
 	}
