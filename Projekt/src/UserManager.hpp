@@ -14,8 +14,8 @@ public:
 	UserManager() noexcept(false);
 	~UserManager();
 
-	std::optional<std::reference_wrapper<User>> registration(std::string, std::string);
-	std::optional<std::reference_wrapper<User>> login(std::string, std::string);
+	std::optional<std::reference_wrapper<User>> registration(const std::string&, const std::string&);
+	std::optional<std::reference_wrapper<User>> login(const std::string&, const std::string&);
 
 private:
 	std::string hashPassword(const std::string&) const;

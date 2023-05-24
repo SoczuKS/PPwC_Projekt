@@ -1,10 +1,7 @@
 #include "UserManager.hpp"
 
-#include <algorithm>
 #include <fstream>
-#include <functional>
-#include <numbers>
-#include <sstream>
+#include <ranges>
 
 #include <QCryptographicHash>
 
@@ -26,23 +23,21 @@ UserManager::~UserManager()
 	save();
 }
 
-std::optional<std::reference_wrapper<User>> UserManager::login(std::string username, std::string plainPassword)
+std::optional<std::reference_wrapper<User>> UserManager::login(const std::string& username, const std::string& plainPassword)
 {
-	const auto it = std::find_if(users.begin(), users.end(), [this, &username, &plainPassword](const auto& user) {
-		return username == user.getUsername() and hashPassword(plainPassword) == user.getPasswordHash();
-	});
-
-	if (it == users.end())
+    if (const auto it = std::ranges::find_if(users, [this, &username, &plainPassword](const auto& user) {
+        return username == user.getUsername() and hashPassword(plainPassword) == user.getPasswordHash();
+    }); it != users.end())
 	{
-		return std::nullopt;
+		return *it;
 	}
 
-	return *it;
+	return std::nullopt;
 }
 
-std::optional<std::reference_wrapper<User>> UserManager::registration(std::string username, std::string plainPassword)
+std::optional<std::reference_wrapper<User>> UserManager::registration(const std::string& username, const std::string& plainPassword)
 {
-	if (users.end() != std::find_if(users.begin(), users.end(), [&username](const auto& user) {
+	if (users.end() != std::ranges::find_if(users, [&username](const auto& user) {
 		return username == user.getUsername();
 	}))
 	{
@@ -56,20 +51,20 @@ std::optional<std::reference_wrapper<User>> UserManager::registration(std::strin
 
 std::string UserManager::hashPassword(const std::string& plainPassword) const
 {
-	auto qtHash = QCryptographicHash::hash(plainPassword, QCryptographicHash::Sha256);
+	const auto qtHash = QCryptographicHash::hash(plainPassword, QCryptographicHash::Sha256);
 
 	return std::string{qtHash.toHex()};
 }
 
 uint64_t UserManager::generateUserId()
 {
-	bool isFree{ false };
+	bool isFree;
 	uint64_t id{ 0 };
 	do
 	{
 		id = distribution(mersenneTwisterEngine);
 
-		isFree = users.end() == std::find_if(users.begin(), users.end(), [&id](const auto& user) {
+		isFree = users.end() == std::ranges::find_if(users, [&id](const auto& user) {
 			return id == user.getId();
 		});
 	} while (not isFree);
