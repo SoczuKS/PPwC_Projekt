@@ -8,7 +8,7 @@
 class Car final : protected MotorizedVehicle
 {
 public:
-	Car() = default;
+	Car(const VehicleParameters&, const MotorizedVehicleParameters&);
 	~Car() override = default;
 
 	std::string getDescription() const override;
