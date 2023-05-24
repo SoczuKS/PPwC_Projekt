@@ -16,6 +16,16 @@ public:
 	VehicleDatabase() noexcept(false);
 	~VehicleDatabase();
 
+	const auto& getBikes() const { return bikes; }
+	const auto& getCars() const { return cars; }
+	const auto& getMotorcycles() const { return motorcycles; }
+	const auto& getScooters() const { return scooters; }
+
+	std::shared_ptr<Bike> getBikeById(uint64_t) const;
+	std::shared_ptr<Car> getCarById(uint64_t) const;
+	std::shared_ptr<Motorcycle> getMotorcycleById(uint64_t) const;
+	std::shared_ptr<Scooter> getScooterById(uint64_t) const;
+
 private:
 	void save() const;
 	void saveBikes() const;

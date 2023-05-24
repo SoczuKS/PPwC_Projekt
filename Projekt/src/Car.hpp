@@ -5,7 +5,7 @@
 
 #include "MotorizedVehicle.hpp"
 
-class Car final : protected MotorizedVehicle
+class Car final : public MotorizedVehicle
 {
 public:
 	Car(const VehicleParameters&, const MotorizedVehicleParameters&);

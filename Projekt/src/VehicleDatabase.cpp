@@ -206,3 +206,51 @@ void VehicleDatabase::loadScooters()
 		scooters.emplace_back(std::make_shared<Scooter>(vehicleParams));
 	}
 }
+
+std::shared_ptr<Bike> VehicleDatabase::getBikeById(uint64_t id) const
+{
+	if (const auto& it = std::ranges::find_if(bikes, [&id](const std::shared_ptr<Bike>& bike)
+	{
+		return id == bike->getId();
+	}); bikes.end() != it)
+	{
+		return *it;
+	}
+	return nullptr;
+}
+
+std::shared_ptr<Car> VehicleDatabase::getCarById(uint64_t id) const
+{
+	if (const auto& it = std::ranges::find_if(cars, [&id](const std::shared_ptr<Car>& car)
+	{
+		return id == car->getId();
+	}); cars.end() != it)
+	{
+		return *it;
+	}
+	return nullptr;
+}
+
+std::shared_ptr<Motorcycle> VehicleDatabase::getMotorcycleById(uint64_t id) const
+{
+	if (const auto& it = std::ranges::find_if(motorcycles, [&id](const std::shared_ptr<Motorcycle>& motorcycle)
+	{
+		return id == motorcycle->getId();
+	}); motorcycles.end() != it)
+	{
+		return *it;
+	}
+	return nullptr;
+}
+
+std::shared_ptr<Scooter> VehicleDatabase::getScooterById(uint64_t id) const
+{
+	if (const auto& it = std::ranges::find_if(scooters, [&id](const std::shared_ptr<Scooter>& scooter)
+	{
+		return id == scooter->getId();
+	}); scooters.end() != it)
+	{
+		return *it;
+	}
+	return nullptr;
+}

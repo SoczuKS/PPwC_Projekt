@@ -4,7 +4,7 @@
 
 struct MotorizedVehicleParameters;
 
-class MotorizedVehicle : protected Vehicle
+class MotorizedVehicle : public Vehicle
 {
 public:
 	enum class Drive
