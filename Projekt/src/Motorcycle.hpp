@@ -8,7 +8,7 @@
 class Motorcycle final : public MotorizedVehicle
 {
 public:
-	Motorcycle() = default;
+	Motorcycle(const VehicleParameters&, const MotorizedVehicleParameters&);
 	~Motorcycle() override = default;
 
 	std::string getDescription() const override;

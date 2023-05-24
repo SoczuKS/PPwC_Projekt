@@ -146,7 +146,38 @@ void VehicleDatabase::loadCars()
 
 void VehicleDatabase::loadMotorcycles()
 {
+	std::fstream file(MotorcyclesDatabaseFilename, std::ios::in);
+	std::string line;
 
+	while (std::getline(file, line))
+	{
+		auto substrings = utils::splitString(line, ';');
+
+		if (9 != substrings.size())
+		{
+			throw std::exception("Invalid motorcycle database");
+		}
+
+		VehicleParameters vehicleParams{
+			.id = std::stoull(substrings[5]),
+			.productionYear = static_cast<uint16_t>(std::stoi(substrings[2])),
+			.pricePerHour = std::stof(substrings[0]),
+			.pricePerDay = std::stof(substrings[1]),
+			.manufacturer = substrings[3],
+			.model = substrings[4],
+		};
+
+		MotorizedVehicleParameters params{
+			.drive = MotorizedVehicle::Drive::rear,
+			.transmission = static_cast<MotorizedVehicle::Transmission>(std::stoi(substrings[5])),
+			.engineSpec = {
+				.capacity = std::stof(substrings[6]),
+				.power = static_cast<uint16_t>(std::stoi(substrings[7]))
+			}
+		};
+
+		motorcycles.emplace_back(std::make_shared<Motorcycle>(vehicleParams, params));
+	}
 }
 
 void VehicleDatabase::loadScooters()
