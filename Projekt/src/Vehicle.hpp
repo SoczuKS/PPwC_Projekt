@@ -71,7 +71,9 @@ public:
 
 	virtual std::string getDescription() const = 0;
 
-private:
+	virtual std::fstream& operator <<(std::fstream&) = 0;
+
+protected:
 	const uint64_t id;
 	uint16_t productionYear;
 	float pricePerHour;

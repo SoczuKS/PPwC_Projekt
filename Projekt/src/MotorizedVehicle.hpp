@@ -1,10 +1,12 @@
 #pragma once
 
+#include <fstream>
+
 #include "Vehicle.hpp"
 
 struct MotorizedVehicleParameters;
 
-class MotorizedVehicle : public Vehicle
+class MotorizedVehicle : protected Vehicle
 {
 public:
 	enum class Drive
@@ -61,7 +63,7 @@ public:
 		return engineSpec;
 	}
 
-private:
+protected:
 	Drive drive;
 	Transmission transmission;
 	EngineSpec engineSpec;
