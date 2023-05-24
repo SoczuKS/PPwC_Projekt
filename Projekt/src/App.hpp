@@ -3,6 +3,7 @@
 #include "ui_App.h"
 
 #include "UserManager.hpp"
+#include "VehicleDatabase.hpp"
 
 class App final : public QMainWindow
 {
@@ -15,4 +16,5 @@ public:
 private:
 	Ui::AppClass ui;
 	UserManager userManager;
+	VehicleDatabase vehicleDatabase;
 };
