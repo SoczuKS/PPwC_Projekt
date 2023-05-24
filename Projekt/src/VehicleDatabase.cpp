@@ -4,6 +4,7 @@
 #include <fstream>
 
 #include "Bike.hpp"
+#include "Scooter.hpp"
 #include "Utils.hpp"
 
 const std::string VehicleDatabase::BikesDatabaseFilename = "data/bikes.csv";
@@ -116,5 +117,27 @@ void VehicleDatabase::loadMotorcycles()
 
 void VehicleDatabase::loadScooters()
 {
+	std::fstream file(ScootersDatabaseFilename, std::ios::in);
+	std::string line;
 
+	while (std::getline(file, line))
+	{
+		auto substrings = utils::splitString(line, ';');
+
+		if (6 != substrings.size())
+		{
+			throw std::exception("Invalid bike database");
+		}
+
+		VehicleParameters vehicleParams{
+			.id = std::stoull(substrings[5]),
+			.productionYear = static_cast<uint16_t>(std::stoi(substrings[2])),
+			.pricePerHour = std::stof(substrings[0]),
+			.pricePerDay = std::stof(substrings[1]),
+			.manufacturer = substrings[3],
+			.model = substrings[4]
+		};
+
+		scooters.emplace_back(std::make_shared<Scooter>(vehicleParams));
+	}
 }

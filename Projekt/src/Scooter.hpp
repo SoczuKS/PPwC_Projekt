@@ -8,7 +8,7 @@
 class Scooter final : public Vehicle
 {
 public:
-	Scooter() = default;
+	Scooter(const VehicleParameters&);
 	~Scooter() override = default;
 
 	std::string getDescription() const override;
