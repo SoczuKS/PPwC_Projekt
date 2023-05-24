@@ -4,6 +4,8 @@
 #include <fstream>
 
 #include "Bike.hpp"
+#include "Car.hpp"
+#include "Motorcycle.hpp"
 #include "Scooter.hpp"
 #include "Utils.hpp"
 
@@ -32,41 +34,41 @@ void VehicleDatabase::save() const
 
 void VehicleDatabase::saveBikes() const
 {
-	std::fstream file(BikesDatabaseFilename, std::ios::in);
+	std::fstream file(BikesDatabaseFilename, std::ios::out);
 
 	for (const auto& bike : bikes)
 	{
-		file << bike.get() << '\n';
+		file << *bike << '\n';
 	}
 }
 
 void VehicleDatabase::saveCars() const
 {
-	std::fstream file(CarsDatabaseFilename, std::ios::in);
+	std::fstream file(CarsDatabaseFilename, std::ios::out);
 
 	for (const auto& car : cars)
 	{
-		file << car.get() << '\n';
+		file << *car << '\n';
 	}
 }
 
 void VehicleDatabase::saveMotorcycles() const
 {
-	std::fstream file(MotorcyclesDatabaseFilename, std::ios::in);
+	std::fstream file(MotorcyclesDatabaseFilename, std::ios::out);
 
 	for (const auto& motorcycle : motorcycles)
 	{
-		file << motorcycle.get() << '\n';
+		file << *motorcycle << '\n';
 	}
 }
 
 void VehicleDatabase::saveScooters() const
 {
-	std::fstream file(ScootersDatabaseFilename, std::ios::in);
+	std::fstream file(ScootersDatabaseFilename, std::ios::out);
 
 	for (const auto& scooter : scooters)
 	{
-		file << scooter.get() << '\n';
+		file << *scooter << '\n';
 	}
 }
 
