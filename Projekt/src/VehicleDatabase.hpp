@@ -29,7 +29,6 @@ private:
 	void loadMotorcycles() noexcept(false);
 	void loadScooters() noexcept(false);
 
-	std::vector<std::shared_ptr<Vehicle>> vehicles;
 	std::vector<std::shared_ptr<Bike>> bikes;
 	std::vector<std::shared_ptr<Car>> cars;
 	std::vector<std::shared_ptr<Motorcycle>> motorcycles;

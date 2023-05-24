@@ -8,7 +8,7 @@
 class Bike final : public Vehicle
 {
 public:
-	Bike() = default;
+	Bike(const VehicleParameters&);
 	~Bike() override = default;
 
 	std::string getDescription() const override;
