@@ -9,6 +9,7 @@
 #include <QCryptographicHash>
 
 #include "User.hpp"
+#include "Utils.hpp"
 
 const std::string UserManager::UsersFilename = "passwd.txt";
 
@@ -85,15 +86,7 @@ bool UserManager::load()
 
 		while (std::getline(file, line))
 		{
-			std::stringstream sstr{line};
-			std::vector<std::string> substrings;
-			std::string substring;
-
-			while (sstr.good())
-			{
-				std::getline(sstr, substring, ',');
-				substrings.push_back(substring);
-			}
+			const auto substrings = utils::splitString(line, ',');
 
 			if (substrings.size() != 4)
 			{
