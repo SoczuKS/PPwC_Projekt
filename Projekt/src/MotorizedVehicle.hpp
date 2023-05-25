@@ -31,7 +31,6 @@ public:
 		} fuelType;
 	};
 
-	MotorizedVehicle() = default;
 	MotorizedVehicle(const VehicleParameters&, const MotorizedVehicleParameters&);
 
 	void setDrive(const Drive d)
