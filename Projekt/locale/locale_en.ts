@@ -52,4 +52,12 @@
         <translation>sign up</translation>
     </message>
 </context>
+<context>
+    <name>MainWindowClass</name>
+    <message>
+        <location filename="../MainWindow.ui" line="16"/>
+        <source>App</source>
+        <translation>Vehicle rental office</translation>
+    </message>
+</context>
 </TS>

@@ -113,6 +113,7 @@
   <ItemGroup>
     <ClCompile Include="src\Bike.cpp" />
     <ClCompile Include="src\Car.cpp" />
+    <ClCompile Include="src\MainWindow.cpp" />
     <ClCompile Include="src\Motorcycle.cpp" />
     <ClCompile Include="src\MotorizedVehicle.cpp" />
     <ClCompile Include="src\RentalService.cpp" />
@@ -123,6 +124,7 @@
     <ClCompile Include="src\VehicleDatabase.cpp" />
     <ClCompile Include="src\Vehicle.cpp" />
     <QtRcc Include="qt\App.qrc" />
+    <QtUic Include="MainWindow.ui" />
     <QtUic Include="qt\App.ui" />
     <QtMoc Include="src\App.hpp" />
     <ClCompile Include="src\App.cpp" />
@@ -133,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="src\Bike.hpp" />
     <ClInclude Include="src\Car.hpp" />
+    <QtMoc Include="src\MainWindow.hpp" />
     <ClInclude Include="src\Motorcycle.hpp" />
     <ClInclude Include="src\MotorizedVehicle.hpp" />
     <ClInclude Include="src\RentalService.hpp" />

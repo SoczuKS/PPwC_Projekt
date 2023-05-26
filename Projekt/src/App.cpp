@@ -79,5 +79,7 @@ void App::loginAndRegistrationErrorHandler(LoginAndRegistrationError err)
 
 void App::loginAndRegistrationSuccessHandler(std::reference_wrapper<User> user)
 {
-	// TODO: open new window
+	mainWindow = std::make_unique<MainWindow>(user);
+	mainWindow->show();
+	close();
 }

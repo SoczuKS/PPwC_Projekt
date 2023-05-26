@@ -2,6 +2,7 @@
 
 #include "ui_App.h"
 
+#include "MainWindow.hpp"
 #include "UserManager.hpp"
 #include "VehicleDatabase.hpp"
 
@@ -10,7 +11,7 @@ class App final : public QMainWindow
 	Q_OBJECT
 
 public:
-	App(QWidget* parent = nullptr);
+	App(QWidget* = nullptr);
 	~App() override = default;
 
 private slots:
@@ -22,7 +23,7 @@ private:
 
 	Ui::AppClass ui;
 	UserManager userManager;
-	VehicleDatabase vehicleDatabase;
+	std::unique_ptr<MainWindow> mainWindow;
 
 	void loginAndRegistrationErrorHandler(LoginAndRegistrationError);
 	void loginAndRegistrationSuccessHandler(std::reference_wrapper<User>);

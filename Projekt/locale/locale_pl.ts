@@ -52,4 +52,12 @@
         <translation>zarejestruj</translation>
     </message>
 </context>
+<context>
+    <name>MainWindowClass</name>
+    <message>
+        <location filename="../MainWindow.ui" line="16"/>
+        <source>App</source>
+        <translation>Wypożyczalnia pojazdów</translation>
+    </message>
+</context>
 </TS>
