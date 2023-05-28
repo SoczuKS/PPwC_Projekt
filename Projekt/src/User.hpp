@@ -21,6 +21,8 @@ public:
 
 	std::string getPasswordHash() const { return passwordHash; }
 
+	Role getRole() const { return role; }
+
 	friend std::fstream& operator<<(std::fstream& file, const User& user)
 	{
 		file << user.id << ',' << user.username << ',' << user.passwordHash << ',' << static_cast<uint16_t>(user.role);

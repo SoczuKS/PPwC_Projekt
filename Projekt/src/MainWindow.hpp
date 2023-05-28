@@ -3,6 +3,7 @@
 #include "ui_MainWindow.h"
 
 #include "RentalService.hpp"
+#include "User.hpp"
 #include "VehicleDatabase.hpp"
 
 class User;
@@ -22,5 +23,6 @@ private:
 	Ui::MainWindowClass ui;
 	VehicleDatabase vehicleDatabase;
 	RentalService rentalService;
+	bool isAdmin() const { return User::Role::admin == user.get().getRole(); }
 };
 

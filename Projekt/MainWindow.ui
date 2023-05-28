@@ -1,51 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>MainWindowClass</class>
  <widget class="QMainWindow" name="MainWindowClass">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1024</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>App</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>21</y>
-     <width>800</width>
-     <height>560</height>
-    </rect>
-   </property>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>5</y>
+      <width>1014</width>
+      <height>1390</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="carsTab">
+     <attribute name="title">
+      <string>cars</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="bikesTab">
+     <attribute name="title">
+      <string>bikes</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="motorcylesBikes">
+     <attribute name="title">
+      <string>motorcycles</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="scootersTab">
+     <attribute name="title">
+      <string>scooters</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="rentsTab">
+     <attribute name="title">
+      <string>rents</string>
+     </attribute>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>21</height>
+     <width>1024</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>581</y>
-     <width>800</width>
-     <height>19</height>
-    </rect>
-   </property>
-  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <pixmapfunction></pixmapfunction>
+ <resources/>
  <connections/>
 </ui>

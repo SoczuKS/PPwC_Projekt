@@ -55,9 +55,34 @@
 <context>
     <name>MainWindowClass</name>
     <message>
-        <location filename="../MainWindow.ui" line="16"/>
+        <location filename="../MainWindow.ui" line="14"/>
         <source>App</source>
         <translation>Wypożyczalnia pojazdów</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="31"/>
+        <source>cars</source>
+        <translation>Samochody</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="36"/>
+        <source>bikes</source>
+        <translation>Rowery</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="41"/>
+        <source>motorcycles</source>
+        <translation>Motocykle</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="46"/>
+        <source>scooters</source>
+        <translation>Hulajnogi</translation>
+    </message>
+    <message>
+        <location filename="../MainWindow.ui" line="51"/>
+        <source>rents</source>
+        <translation>Wypożyczenia</translation>
     </message>
 </context>
 </TS>
