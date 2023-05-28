@@ -129,6 +129,7 @@
     <QtMoc Include="src\App.hpp" />
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <None Include="cpp.hint" />
     <None Include="media\Projekt.ico" />
     <ResourceCompile Include="qt\Projekt.rc" />
   </ItemGroup>
