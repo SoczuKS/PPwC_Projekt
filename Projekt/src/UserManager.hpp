@@ -16,6 +16,7 @@ public:
 
 	std::optional<std::reference_wrapper<User>> registration(const std::string&, const std::string&);
 	std::optional<std::reference_wrapper<User>> login(const std::string&, const std::string&);
+	void removeUser(uint64_t id);
 
 private:
 	std::string hashPassword(const std::string&) const;

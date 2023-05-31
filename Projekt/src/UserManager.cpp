@@ -1,4 +1,4 @@
-#include "UserManager.hpp"
+﻿#include "UserManager.hpp"
 
 #include <fstream>
 #include <ranges>
@@ -23,11 +23,20 @@ UserManager::~UserManager()
 	save();
 }
 
+void UserManager::removeUser(uint64_t id)
+{
+	std::erase_if(users, [id](const auto& user)
+	{
+		return id == user.getId();
+	});
+}
+
 std::optional<std::reference_wrapper<User>> UserManager::login(const std::string& username, const std::string& plainPassword)
 {
-    if (const auto it = std::ranges::find_if(users, [this, &username, &plainPassword](const auto& user) {
-        return username == user.getUsername() and hashPassword(plainPassword) == user.getPasswordHash();
-    }); it != users.end())
+	if (const auto it = std::ranges::find_if(users, [this, &username, &plainPassword](const auto& user)
+	{
+		return username == user.getUsername() and hashPassword(plainPassword) == user.getPasswordHash();
+	}); it != users.end())
 	{
 		return *it;
 	}
@@ -37,7 +46,8 @@ std::optional<std::reference_wrapper<User>> UserManager::login(const std::string
 
 std::optional<std::reference_wrapper<User>> UserManager::registration(const std::string& username, const std::string& plainPassword)
 {
-	if (users.end() != std::ranges::find_if(users, [&username](const auto& user) {
+	if (users.end() != std::ranges::find_if(users, [&username](const auto& user)
+	{
 		return username == user.getUsername();
 	}))
 	{
@@ -64,7 +74,8 @@ uint64_t UserManager::generateUserId()
 	{
 		id = distribution(mersenneTwisterEngine);
 
-		isFree = users.end() == std::ranges::find_if(users, [&id](const auto& user) {
+		isFree = users.end() == std::ranges::find_if(users, [&id](const auto& user)
+		{
 			return id == user.getId();
 		});
 	} while (not isFree);

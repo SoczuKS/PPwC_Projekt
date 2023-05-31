@@ -24,6 +24,61 @@ VehicleDatabase::~VehicleDatabase()
 	save();
 }
 
+void VehicleDatabase::addVehicle(std::shared_ptr<Bike> bike)
+{
+	bikes.emplace_back(std::move(bike));
+}
+
+void VehicleDatabase::addVehicle(std::shared_ptr<Car> car)
+{
+	cars.emplace_back(std::move(car));
+
+}
+
+void VehicleDatabase::addVehicle(std::shared_ptr<Motorcycle> motorcycle)
+{
+	motorcycles.emplace_back(std::move(motorcycle));
+
+}
+
+void VehicleDatabase::addVehicle(std::shared_ptr<Scooter> scooter)
+{
+	scooters.emplace_back(std::move(scooter));
+
+}
+
+void VehicleDatabase::removeVehicle(uint64_t id)
+{
+	if (0 < std::erase_if(bikes, [id](const auto& bike)
+	{
+		return id == bike->getId();
+	}))
+	{
+		return;
+	}
+
+	if (0 < std::erase_if(cars, [id](const auto& car)
+	{
+		return id == car->getId();
+	}))
+	{
+		return;
+	}
+
+	if (0 < std::erase_if(motorcycles, [id](const auto& motorcycle)
+	{
+		return id == motorcycle->getId();
+	}))
+	{
+		return;
+	}
+
+	std::erase_if(scooters, [id](const auto& scooter)
+	{
+		return id == scooter->getId();
+	});
+}
+
 void VehicleDatabase::save() const
 {
 	saveBikes();

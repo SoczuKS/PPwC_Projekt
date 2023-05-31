@@ -26,6 +26,13 @@ public:
 	std::shared_ptr<Motorcycle> getMotorcycleById(uint64_t) const;
 	std::shared_ptr<Scooter> getScooterById(uint64_t) const;
 
+	void addVehicle(std::shared_ptr<Bike>);
+	void addVehicle(std::shared_ptr<Car>);
+	void addVehicle(std::shared_ptr<Motorcycle>);
+	void addVehicle(std::shared_ptr<Scooter>);
+
+	void removeVehicle(uint64_t id);
+
 private:
 	void save() const;
 	void saveBikes() const;
