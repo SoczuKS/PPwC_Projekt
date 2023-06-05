@@ -123,6 +123,7 @@
     <ClCompile Include="src\Utils.cpp" />
     <ClCompile Include="src\VehicleDatabase.cpp" />
     <ClCompile Include="src\Vehicle.cpp" />
+    <None Include="src\Utils.inc" />
     <QtRcc Include="qt\App.qrc" />
     <QtUic Include="MainWindow.ui" />
     <QtUic Include="qt\App.ui" />
@@ -139,6 +140,7 @@
     <QtMoc Include="src\MainWindow.hpp" />
     <ClInclude Include="src\Motorcycle.hpp" />
     <ClInclude Include="src\MotorizedVehicle.hpp" />
+    <ClInclude Include="src\Rent.hpp" />
     <ClInclude Include="src\RentalService.hpp" />
     <ClInclude Include="src\Scooter.hpp" />
     <ClInclude Include="src\User.hpp" />

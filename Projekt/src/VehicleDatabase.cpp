@@ -142,7 +142,7 @@ void VehicleDatabase::loadBikes()
 
 	while (std::getline(file, line))
 	{
-		auto substrings = utils::splitString(line, ';');
+		auto substrings = Utils::splitString(line, ';');
 
 		if (6 != substrings.size())
 		{
@@ -169,7 +169,7 @@ void VehicleDatabase::loadCars()
 
 	while (std::getline(file, line))
 	{
-		auto substrings = utils::splitString(line, ';');
+		auto substrings = Utils::splitString(line, ';');
 
 		if (11 != substrings.size())
 		{
@@ -206,7 +206,7 @@ void VehicleDatabase::loadMotorcycles()
 
 	while (std::getline(file, line))
 	{
-		auto substrings = utils::splitString(line, ';');
+		auto substrings = Utils::splitString(line, ';');
 
 		if (9 != substrings.size())
 		{
@@ -242,7 +242,7 @@ void VehicleDatabase::loadScooters()
 
 	while (std::getline(file, line))
 	{
-		auto substrings = utils::splitString(line, ';');
+		auto substrings = Utils::splitString(line, ';');
 
 		if (6 != substrings.size())
 		{

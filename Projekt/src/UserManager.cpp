@@ -54,7 +54,7 @@ std::optional<std::reference_wrapper<User>> UserManager::registration(const std:
 		return std::nullopt;
 	}
 
-	users.emplace_back(User(generateUserId(), username, hashPassword(plainPassword), User::Role::customer));
+	users.emplace_back(User(Utils::generateId<User>(users), username, hashPassword(plainPassword), User::Role::customer));
 
 	return users.at(users.size() - 1);
 }
@@ -66,23 +66,6 @@ std::string UserManager::hashPassword(const std::string& plainPassword) const
 	return std::string{qtHash.toHex()};
 }
 
-uint64_t UserManager::generateUserId()
-{
-	bool isFree;
-	uint64_t id{ 0 };
-	do
-	{
-		id = distribution(mersenneTwisterEngine);
-
-		isFree = users.end() == std::ranges::find_if(users, [&id](const auto& user)
-		{
-			return id == user.getId();
-		});
-	} while (not isFree);
-
-	return id;
-}
-
 void UserManager::load()
 {
 	std::fstream file(UsersFilename, std::ios::in);
@@ -90,7 +73,7 @@ void UserManager::load()
 
 	while (std::getline(file, line))
 	{
-		auto substrings = utils::splitString(line, ',');
+		auto substrings = Utils::splitString(line, ',');
 
 		if (4 != substrings.size())
 		{

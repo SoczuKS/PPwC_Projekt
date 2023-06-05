@@ -19,10 +19,10 @@ public:
 	void removeUser(uint64_t id);
 
 private:
-	std::string hashPassword(const std::string&) const;
-	uint64_t generateUserId();
 	void load() noexcept(false);
 	void save() const;
+
+	std::string hashPassword(const std::string&) const;
 
 	std::vector<User> users;
 	std::random_device randomDevice;
