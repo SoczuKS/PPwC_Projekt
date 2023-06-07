@@ -3,9 +3,12 @@
 #include <QTranslator>
 
 #include "App.hpp"
+#include "Logger.hpp"
 
 int main(int argc, char* argv[])
 {
+	auto logger = std::make_shared<Logger>();
+	logger->write("App starting...");
 	QApplication a(argc, argv);
 
 	QTranslator translator;
@@ -14,7 +17,7 @@ int main(int argc, char* argv[])
 		a.installTranslator(&translator);
 	}
 
-	App app;
+	App app(logger);
 	app.show();
 	return a.exec();
 }

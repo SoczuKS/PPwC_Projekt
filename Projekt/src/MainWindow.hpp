@@ -6,6 +6,7 @@
 #include "User.hpp"
 #include "VehicleDatabase.hpp"
 
+class Logger;
 class User;
 
 class MainWindow final : public QMainWindow
@@ -13,7 +14,7 @@ class MainWindow final : public QMainWindow
 	Q_OBJECT
 
 public:
-	MainWindow(std::reference_wrapper<User>, QWidget* = nullptr);
+	MainWindow(std::reference_wrapper<User>, std::shared_ptr<Logger>, QWidget* = nullptr);
 	~MainWindow() override = default;
 
 private slots:
@@ -21,6 +22,7 @@ private slots:
 private:
 	std::reference_wrapper<User> user;
 	Ui::MainWindowClass ui;
+	std::shared_ptr<Logger> logger;
 	VehicleDatabase vehicleDatabase;
 	RentalService rentalService;
 	bool isAdmin() const { return User::Role::admin == user.get().getRole(); }

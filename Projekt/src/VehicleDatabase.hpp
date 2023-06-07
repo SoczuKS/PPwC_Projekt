@@ -7,13 +7,14 @@
 class Vehicle;
 class Bike;
 class Car;
+class Logger;
 class Motorcycle;
 class Scooter;
 
 class VehicleDatabase final
 {
 public:
-	VehicleDatabase() noexcept(false);
+	VehicleDatabase(std::shared_ptr<Logger>) noexcept(false);
 	~VehicleDatabase();
 
 	const auto& getBikes() const { return bikes; }
@@ -50,6 +51,8 @@ private:
 	std::vector<std::shared_ptr<Car>> cars;
 	std::vector<std::shared_ptr<Motorcycle>> motorcycles;
 	std::vector<std::shared_ptr<Scooter>> scooters;
+
+	std::shared_ptr<Logger> logger;
 
 	static const std::string BikesDatabaseFilename;
 	static const std::string CarsDatabaseFilename;

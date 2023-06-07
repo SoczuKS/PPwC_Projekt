@@ -4,22 +4,22 @@
 <context>
     <name>App</name>
     <message>
-        <location filename="../src/App.cpp" line="64"/>
+        <location filename="../src/App.cpp" line="67"/>
         <source>empty_field</source>
         <translation>Please fill both fields</translation>
     </message>
     <message>
-        <location filename="../src/App.cpp" line="68"/>
+        <location filename="../src/App.cpp" line="71"/>
         <source>invalid_credentials</source>
         <translation>Invalid credentials</translation>
     </message>
     <message>
-        <location filename="../src/App.cpp" line="72"/>
+        <location filename="../src/App.cpp" line="75"/>
         <source>username_taken</source>
         <translation>Username taken</translation>
     </message>
     <message>
-        <location filename="../src/App.cpp" line="76"/>
+        <location filename="../src/App.cpp" line="79"/>
         <source>unknown_error</source>
         <translation>Unknown error</translation>
     </message>

@@ -10,10 +10,11 @@
 
 const std::string UserManager::UsersFilename = "data/passwd.txt";
 
-UserManager::UserManager() :
+UserManager::UserManager(std::shared_ptr<Logger> logger) :
 	randomDevice{ std::random_device() },
 	mersenneTwisterEngine{ randomDevice() },
-	distribution{ std::uniform_int_distribution<uint64_t>(0.0, std::numeric_limits<uint64_t>::max()) }
+	distribution{ std::uniform_int_distribution<uint64_t>(0.0, std::numeric_limits<uint64_t>::max()) },
+	logger{ logger }
 {
 	load();
 }

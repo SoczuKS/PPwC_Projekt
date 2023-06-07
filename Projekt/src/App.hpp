@@ -6,12 +6,14 @@
 #include "UserManager.hpp"
 #include "VehicleDatabase.hpp"
 
+class Logger;
+
 class App final : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	App(QWidget* = nullptr);
+	App(std::shared_ptr<Logger>, QWidget* = nullptr);
 	~App() override = default;
 
 private slots:
@@ -21,10 +23,11 @@ private slots:
 private:
 	enum class LoginAndRegistrationError { emptyField, invalidCredentials, usernameTaken };
 
-	Ui::AppClass ui;
-	UserManager userManager;
-	std::unique_ptr<MainWindow> mainWindow;
-
 	void loginAndRegistrationErrorHandler(LoginAndRegistrationError);
 	void loginAndRegistrationSuccessHandler(std::reference_wrapper<User>);
+
+	Ui::AppClass ui;
+	std::unique_ptr<MainWindow> mainWindow;
+	std::shared_ptr<Logger> logger;
+	UserManager userManager;
 };

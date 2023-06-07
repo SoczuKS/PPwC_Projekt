@@ -14,7 +14,7 @@ const std::string VehicleDatabase::CarsDatabaseFilename = "data/cars.csv";
 const std::string VehicleDatabase::MotorcyclesDatabaseFilename = "data/motorcycles.csv";
 const std::string VehicleDatabase::ScootersDatabaseFilename = "data/scooters.csv";
 
-VehicleDatabase::VehicleDatabase()
+VehicleDatabase::VehicleDatabase(std::shared_ptr<Logger> logger) : logger{ logger }
 {
 	load();
 }

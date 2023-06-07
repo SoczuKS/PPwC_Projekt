@@ -1,13 +1,16 @@
 #include "App.hpp"
 
+#include "Logger.hpp"
 #include "User.hpp"
 
-App::App(QWidget* parent) : QMainWindow(parent)
+App::App(std::shared_ptr<Logger> logger, QWidget* parent) : QMainWindow(parent), logger{ logger }, userManager{ UserManager(logger) }
 {
 	ui.setupUi(this);
 
 	connect(ui.loginButton, &QPushButton::pressed, this, &App::login);
 	connect(ui.registerButton, &QPushButton::pressed, this, &App::registration);
+
+	logger->write("App started");
 }
 
 void App::login()
@@ -79,7 +82,7 @@ void App::loginAndRegistrationErrorHandler(LoginAndRegistrationError err)
 
 void App::loginAndRegistrationSuccessHandler(std::reference_wrapper<User> user)
 {
-	mainWindow = std::make_unique<MainWindow>(user);
+	mainWindow = std::make_unique<MainWindow>(user, logger);
 	mainWindow->show();
 	close();
 }

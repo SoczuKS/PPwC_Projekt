@@ -8,7 +8,7 @@
 
 const std::string RentalService::RentsFilename = "data/rents.csv";
 
-RentalService::RentalService()
+RentalService::RentalService(std::shared_ptr<Logger> logger) : logger{ logger }
 {
 	load();
 }
