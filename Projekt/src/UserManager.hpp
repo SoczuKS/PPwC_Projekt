@@ -26,9 +26,6 @@ private:
 	std::string hashPassword(const std::string&) const;
 
 	std::vector<User> users;
-	std::random_device randomDevice;
-	std::mt19937 mersenneTwisterEngine;
-	std::uniform_int_distribution<uint64_t> distribution;
 	std::shared_ptr<Logger> logger;
 
 	static const std::string UsersFilename;

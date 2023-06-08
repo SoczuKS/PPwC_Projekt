@@ -20,11 +20,12 @@ public:
 private slots:
 
 private:
+	bool isAdmin() const { return User::Role::admin == user.get().getRole(); }
+
 	std::reference_wrapper<User> user;
 	Ui::MainWindowClass ui;
 	std::shared_ptr<Logger> logger;
 	VehicleDatabase vehicleDatabase;
 	RentalService rentalService;
-	bool isAdmin() const { return User::Role::admin == user.get().getRole(); }
 };
 

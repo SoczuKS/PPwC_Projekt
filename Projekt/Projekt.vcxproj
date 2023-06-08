@@ -124,7 +124,6 @@
     <ClCompile Include="src\Utils.cpp" />
     <ClCompile Include="src\VehicleDatabase.cpp" />
     <ClCompile Include="src\Vehicle.cpp" />
-    <None Include="src\Utils.inc" />
     <QtRcc Include="qt\App.qrc" />
     <QtUic Include="MainWindow.ui" />
     <QtUic Include="qt\App.ui" />

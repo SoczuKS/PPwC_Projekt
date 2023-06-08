@@ -4,12 +4,12 @@
 #include <string>
 #include <vector>
 
-class Vehicle;
 class Bike;
 class Car;
 class Logger;
 class Motorcycle;
 class Scooter;
+class Vehicle;
 
 class VehicleDatabase final
 {

@@ -153,8 +153,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
-    <None Include="src\Utils.inc">
-      <Filter>Header Files</Filter>
-    </None>
   </ItemGroup>
 </Project>
