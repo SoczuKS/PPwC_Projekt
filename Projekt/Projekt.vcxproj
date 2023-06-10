@@ -112,6 +112,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\RentWindow.cpp" />
     <ClCompile Include="src\Bike.cpp" />
     <ClCompile Include="src\Car.cpp" />
     <ClCompile Include="src\Logger.cpp" />
@@ -133,12 +134,15 @@
     <ClCompile Include="src\main.cpp" />
     <None Include="cpp.hint" />
     <None Include="media\Projekt.ico" />
+    <QtUic Include="RentWindow.ui" />
     <ResourceCompile Include="qt\Projekt.rc" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="src\RentWindow.hpp" />
     <ClInclude Include="src\Bike.hpp" />
     <ClInclude Include="src\Car.hpp" />
     <QtMoc Include="src\MainWindow.hpp" />
+    <ClInclude Include="src\VehicleParametersConverter.hpp" />
     <ClInclude Include="src\Logger.hpp" />
     <ClInclude Include="src\Motorcycle.hpp" />
     <ClInclude Include="src\MotorizedVehicle.hpp" />

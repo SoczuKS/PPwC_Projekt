@@ -1,11 +1,13 @@
 #include "MainWindow.hpp"
 
 #include <QDateTime>
+#include <QTableWidget>
 
 #include "Bike.hpp"
 #include "Car.hpp"
 #include "Motorcycle.hpp"
 #include "Rent.hpp"
+#include "RentWindow.hpp"
 #include "Scooter.hpp"
 
 MainWindow::MainWindow(const std::reference_wrapper<User> user, std::shared_ptr<Logger> logger, QWidget* parent) :
@@ -22,6 +24,11 @@ MainWindow::MainWindow(const std::reference_wrapper<User> user, std::shared_ptr<
 	motorcyclesTable = ui.motorcyclesTable;
 	scootersTable = ui.scootersTable;
 	rentsTable = ui.rentsTable;
+
+	connect(carsTable, &QTableWidget::cellDoubleClicked, this, &MainWindow::carSelected);
+	connect(bikesTable, &QTableWidget::cellDoubleClicked, this, &MainWindow::bikeSelected);
+	connect(motorcyclesTable, &QTableWidget::cellDoubleClicked, this, &MainWindow::motorcycleSelected);
+	connect(scootersTable, &QTableWidget::cellDoubleClicked, this, &MainWindow::scooterSelected);
 
 	fillTables();
 }
@@ -40,8 +47,6 @@ void MainWindow::fillBikesTable() const
 	const auto& bikes = vehicleDatabase.getBikes();
 	const auto bikesCount = bikes.size();
 
-	bikesTable->setHorizontalHeaderLabels({ tr("Manufacturer"), tr("Model"), tr("Price per hour"), tr("Price per day") });
-
 	bikesTable->setRowCount(bikesCount);
 	bikesTable->setColumnCount(4);
 
@@ -53,14 +58,14 @@ void MainWindow::fillBikesTable() const
 		bikesTable->setItem(i, 2, new QTableWidgetItem(std::to_string(bike->getPricePerHour()).c_str()));
 		bikesTable->setItem(i, 3, new QTableWidgetItem(std::to_string(bike->getPricePerDay()).c_str()));
 	}
+
+	bikesTable->setHorizontalHeaderLabels({ tr("Manufacturer"), tr("Model"), tr("Price per hour"), tr("Price per day") });
 }
 
 void MainWindow::fillCarsTable() const
 {
 	const auto& cars = vehicleDatabase.getCars();
 	const auto carsCount = cars.size();
-
-	carsTable->setHorizontalHeaderLabels({ tr("Manufacturer"), tr("Model"), tr("Price per hour"), tr("Price per day")});
 
 	carsTable->setRowCount(carsCount);
 	carsTable->setColumnCount(4);
@@ -73,14 +78,14 @@ void MainWindow::fillCarsTable() const
 		carsTable->setItem(i, 2, new QTableWidgetItem(std::to_string(car->getPricePerHour()).c_str()));
 		carsTable->setItem(i, 3, new QTableWidgetItem(std::to_string(car->getPricePerDay()).c_str()));
 	}
+
+	carsTable->setHorizontalHeaderLabels({ tr("Manufacturer"), tr("Model"), tr("Price per hour"), tr("Price per day") });
 }
 
 void MainWindow::fillMotorcyclesTable() const
 {
 	const auto& motorcycles = vehicleDatabase.getMotorcycles();
 	const auto motorcyclesCount = motorcycles.size();
-
-	motorcyclesTable->setHorizontalHeaderLabels({ tr("Manufacturer"), tr("Model"), tr("Price per hour"), tr("Price per day") });
 
 	motorcyclesTable->setRowCount(motorcyclesCount);
 	motorcyclesTable->setColumnCount(4);
@@ -93,14 +98,14 @@ void MainWindow::fillMotorcyclesTable() const
 		motorcyclesTable->setItem(i, 2, new QTableWidgetItem(std::to_string(motorcycle->getPricePerHour()).c_str()));
 		motorcyclesTable->setItem(i, 3, new QTableWidgetItem(std::to_string(motorcycle->getPricePerDay()).c_str()));
 	}
+
+	motorcyclesTable->setHorizontalHeaderLabels({ tr("Manufacturer"), tr("Model"), tr("Price per hour"), tr("Price per day") });
 }
 
 void MainWindow::fillScootersTable() const
 {
 	const auto& scooters = vehicleDatabase.getScooters();
 	const auto scootersCount = scooters.size();
-
-	scootersTable->setHorizontalHeaderLabels({ tr("Manufacturer"), tr("Model"), tr("Price per hour"), tr("Price per day") });
 
 	scootersTable->setRowCount(scootersCount);
 	scootersTable->setColumnCount(4);
@@ -113,14 +118,14 @@ void MainWindow::fillScootersTable() const
 		scootersTable->setItem(i, 2, new QTableWidgetItem(std::to_string(scooter->getPricePerHour()).c_str()));
 		scootersTable->setItem(i, 3, new QTableWidgetItem(std::to_string(scooter->getPricePerDay()).c_str()));
 	}
+
+	scootersTable->setHorizontalHeaderLabels({ tr("Manufacturer"), tr("Model"), tr("Price per hour"), tr("Price per day") });
 }
 
 void MainWindow::fillRentsTable() const
 {
 	const auto& rents = rentalService.getRentsByUserId(user.get().getId());
 	const auto rentsCount = rents.size();
-
-	rentsTable->setHorizontalHeaderLabels({ tr("Vehicle"), tr("Start date"), tr("Days"), tr("Hours") });
 
 	rentsTable->setRowCount(rentsCount);
 	rentsTable->setColumnCount(4);
@@ -139,4 +144,44 @@ void MainWindow::fillRentsTable() const
 		rentsTable->setItem(i, 2, new QTableWidgetItem(std::to_string(rent.get().getDays()).c_str()));
 		rentsTable->setItem(i, 3, new QTableWidgetItem(std::to_string(rent.get().getHours()).c_str()));
 	}
+
+	rentsTable->setHorizontalHeaderLabels({ tr("Vehicle"), tr("Start date"), tr("Days"), tr("Hours") });
+}
+
+void MainWindow::carSelected(int row, int)
+{
+	const auto& car = vehicleDatabase.getCars().at(row);
+
+	orderWindow = std::make_unique<RentWindow>(rentalService, car, user, this);
+	orderWindow->show();
+}
+
+void MainWindow::bikeSelected(int row, int)
+{
+	const auto& bike = vehicleDatabase.getBikes().at(row);
+
+	orderWindow = std::make_unique<RentWindow>(rentalService, bike, user, this);
+	orderWindow->show();
+}
+
+void MainWindow::motorcycleSelected(int row, int)
+{
+	const auto& motorcycle = vehicleDatabase.getMotorcycles().at(row);
+
+	orderWindow = std::make_unique<RentWindow>(rentalService, motorcycle, user, this);
+	orderWindow->show();
+}
+
+void MainWindow::scooterSelected(int row, int)
+{
+	const auto& scooter = vehicleDatabase.getScooters().at(row);
+
+	orderWindow = std::make_unique<RentWindow>(rentalService, scooter, user, this);
+	orderWindow->show();
+}
+
+void MainWindow::orderDone()
+{
+	rentsTable->clear();
+	fillRentsTable();
 }

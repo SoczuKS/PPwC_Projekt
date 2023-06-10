@@ -7,6 +7,7 @@
 #include "VehicleDatabase.hpp"
 
 class Logger;
+class RentWindow;
 class User;
 
 class MainWindow final : public QMainWindow
@@ -17,7 +18,13 @@ public:
 	MainWindow(std::reference_wrapper<User>, std::shared_ptr<Logger>, QWidget* = nullptr);
 	~MainWindow() override = default;
 
+	void orderDone();
+
 private slots:
+	void carSelected(int, int);
+	void bikeSelected(int, int);
+	void motorcycleSelected(int, int);
+	void scooterSelected(int, int);
 
 private:
 	bool isAdmin() const { return User::Role::admin == user.get().getRole(); }
@@ -40,5 +47,7 @@ private:
 	QTableWidget* motorcyclesTable;
 	QTableWidget* scootersTable;
 	QTableWidget* rentsTable;
+
+	std::shared_ptr<RentWindow> orderWindow;
 };
 

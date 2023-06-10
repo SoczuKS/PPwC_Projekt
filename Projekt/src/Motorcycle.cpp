@@ -1,4 +1,4 @@
-#include "Motorcycle.hpp"
+﻿#include "Motorcycle.hpp"
 
 #include <string>
 
@@ -6,5 +6,6 @@ Motorcycle::Motorcycle(const VehicleParameters& vehicleParams, const MotorizedVe
 
 std::string Motorcycle::getDescription() const
 {
-	return {};
+	return { model + "został wyprodukowany przez firmę: " + manufacturer + " w roku: " + std::to_string(productionYear) +
+		" posiada moc o wielkości: " + std::to_string(engineSpec.power) };
 }

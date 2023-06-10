@@ -55,54 +55,54 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/MainWindow.cpp" line="43"/>
-        <location filename="../src/MainWindow.cpp" line="63"/>
-        <location filename="../src/MainWindow.cpp" line="83"/>
-        <location filename="../src/MainWindow.cpp" line="103"/>
+        <location filename="../src/MainWindow.cpp" line="62"/>
+        <location filename="../src/MainWindow.cpp" line="82"/>
+        <location filename="../src/MainWindow.cpp" line="102"/>
+        <location filename="../src/MainWindow.cpp" line="122"/>
         <source>Manufacturer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="43"/>
-        <location filename="../src/MainWindow.cpp" line="63"/>
-        <location filename="../src/MainWindow.cpp" line="83"/>
-        <location filename="../src/MainWindow.cpp" line="103"/>
+        <location filename="../src/MainWindow.cpp" line="62"/>
+        <location filename="../src/MainWindow.cpp" line="82"/>
+        <location filename="../src/MainWindow.cpp" line="102"/>
+        <location filename="../src/MainWindow.cpp" line="122"/>
         <source>Model</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="43"/>
-        <location filename="../src/MainWindow.cpp" line="63"/>
-        <location filename="../src/MainWindow.cpp" line="83"/>
-        <location filename="../src/MainWindow.cpp" line="103"/>
+        <location filename="../src/MainWindow.cpp" line="62"/>
+        <location filename="../src/MainWindow.cpp" line="82"/>
+        <location filename="../src/MainWindow.cpp" line="102"/>
+        <location filename="../src/MainWindow.cpp" line="122"/>
         <source>Price per hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="43"/>
-        <location filename="../src/MainWindow.cpp" line="63"/>
-        <location filename="../src/MainWindow.cpp" line="83"/>
-        <location filename="../src/MainWindow.cpp" line="103"/>
+        <location filename="../src/MainWindow.cpp" line="62"/>
+        <location filename="../src/MainWindow.cpp" line="82"/>
+        <location filename="../src/MainWindow.cpp" line="102"/>
+        <location filename="../src/MainWindow.cpp" line="122"/>
         <source>Price per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="123"/>
+        <location filename="../src/MainWindow.cpp" line="148"/>
         <source>Vehicle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="123"/>
+        <location filename="../src/MainWindow.cpp" line="148"/>
         <source>Start date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="123"/>
+        <location filename="../src/MainWindow.cpp" line="148"/>
         <source>Days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="123"/>
+        <location filename="../src/MainWindow.cpp" line="148"/>
         <source>Hours</source>
         <translation type="unfinished"></translation>
     </message>
@@ -125,19 +125,42 @@
         <translation>Rowery</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="76"/>
+        <location filename="../MainWindow.ui" line="79"/>
         <source>motorcycles</source>
         <translation>Motocykle</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="94"/>
+        <location filename="../MainWindow.ui" line="100"/>
         <source>scooters</source>
         <translation>Hulajnogi</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="112"/>
+        <location filename="../MainWindow.ui" line="121"/>
         <source>rents</source>
         <translation>Wypożyczenia</translation>
+    </message>
+</context>
+<context>
+    <name>RentWindowClass</name>
+    <message>
+        <location filename="../RentWindow.ui" line="14"/>
+        <source>RentWindow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../RentWindow.ui" line="50"/>
+        <source>Hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../RentWindow.ui" line="66"/>
+        <source>Days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../RentWindow.ui" line="92"/>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

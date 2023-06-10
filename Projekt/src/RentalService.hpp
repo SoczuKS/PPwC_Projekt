@@ -1,5 +1,7 @@
 #pragma once
 
+#include <QDateTime>
+
 #include <random>
 #include <vector>
 
@@ -14,11 +16,12 @@ public:
 
 	std::vector<std::reference_wrapper<const Rent>> getRentsByUserId(uint64_t) const;
 
+	void rentVehicle(uint64_t userId, uint64_t vehicleId, uint16_t timeHours, uint16_t timeDays, uint64_t startDate = QDateTime::currentSecsSinceEpoch());
+
 private:
 	void load() noexcept(false);
 	void save() const;
 
-	void rentVehicle(uint64_t id, uint64_t userId, uint64_t vehicleId, uint64_t startDate, uint16_t timeHours, uint16_t timeDays);
 	std::vector<Rent> rents;
 	std::shared_ptr<Logger> logger;
 

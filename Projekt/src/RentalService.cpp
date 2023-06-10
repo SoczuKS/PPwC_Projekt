@@ -53,7 +53,7 @@ void RentalService::save() const
 	}
 }
 
-void RentalService::rentVehicle(uint64_t id, uint64_t userId, uint64_t vehicleId, uint64_t startDate, uint16_t timeHours, uint16_t timeDays)
+void RentalService::rentVehicle(uint64_t userId, uint64_t vehicleId, uint16_t timeHours, uint16_t timeDays, uint64_t startDate)
 {
 	rents.emplace_back(Utils::generateId<Rent>(rents), userId, vehicleId, startDate, timeHours, timeDays);
 }
