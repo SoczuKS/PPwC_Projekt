@@ -64,7 +64,7 @@ std::vector<std::reference_wrapper<const Rent>> RentalService::getRentsByUserId(
 
 	for (const auto& rent : rents)
 	{
-		if (id == rent.getId())
+		if (id == rent.getUserId())
 		{
 			result.push_back(std::reference_wrapper(rent));
 		}

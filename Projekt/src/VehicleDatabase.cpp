@@ -32,19 +32,16 @@ void VehicleDatabase::addVehicle(std::shared_ptr<Bike> bike)
 void VehicleDatabase::addVehicle(std::shared_ptr<Car> car)
 {
 	cars.emplace_back(std::move(car));
-
 }
 
 void VehicleDatabase::addVehicle(std::shared_ptr<Motorcycle> motorcycle)
 {
 	motorcycles.emplace_back(std::move(motorcycle));
-
 }
 
 void VehicleDatabase::addVehicle(std::shared_ptr<Scooter> scooter)
 {
 	scooters.emplace_back(std::move(scooter));
-
 }
 
 void VehicleDatabase::removeVehicle(uint64_t id)
@@ -308,4 +305,33 @@ std::shared_ptr<Scooter> VehicleDatabase::getScooterById(uint64_t id) const
 		return *it;
 	}
 	return nullptr;
+}
+
+std::shared_ptr<Vehicle> VehicleDatabase::getVehicleById(uint64_t id) const
+{
+	std::shared_ptr<Vehicle> vehicle = getCarById(id);
+	if (vehicle)
+	{
+		return vehicle;
+	}
+
+	vehicle = getBikeById(id);
+	if (vehicle)
+	{
+		return vehicle;
+	}
+
+	vehicle = getMotorcycleById(id);
+	if (vehicle)
+	{
+		return vehicle;
+	}
+
+	vehicle = getScooterById(id);
+	if (vehicle)
+	{
+		return vehicle;
+	}
+
+	return vehicle;
 }

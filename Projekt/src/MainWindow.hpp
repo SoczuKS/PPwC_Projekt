@@ -22,10 +22,23 @@ private slots:
 private:
 	bool isAdmin() const { return User::Role::admin == user.get().getRole(); }
 
+	void fillTables() const;
+	void fillBikesTable() const;
+	void fillCarsTable() const;
+	void fillMotorcyclesTable() const;
+	void fillScootersTable() const;
+	void fillRentsTable() const;
+
 	std::reference_wrapper<User> user;
 	Ui::MainWindowClass ui;
 	std::shared_ptr<Logger> logger;
 	VehicleDatabase vehicleDatabase;
 	RentalService rentalService;
+
+	QTableWidget* bikesTable;
+	QTableWidget* carsTable;
+	QTableWidget* motorcyclesTable;
+	QTableWidget* scootersTable;
+	QTableWidget* rentsTable;
 };
 

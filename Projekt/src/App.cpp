@@ -11,6 +11,12 @@ App::App(std::shared_ptr<Logger> logger, QWidget* parent) : QMainWindow(parent),
 	connect(ui.registerButton, &QPushButton::pressed, this, &App::registration);
 
 	logger->write("App started");
+
+#ifdef LOGIN_AS_ADMIN
+	ui.loginTextEdit->setText("admin");
+	ui.passwordTextEdit->setText("admin123");
+	login();
+#endif
 }
 
 void App::login()

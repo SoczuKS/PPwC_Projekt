@@ -27,6 +27,16 @@ struct Rent
 
 	uint64_t getId() const { return id; }
 
+	uint64_t getUserId() const { return userId; }
+
+	uint64_t getVehicleId() const { return vehicleId; }
+
+	uint64_t getStartDate() const { return startDate; }
+
+	uint16_t getHours() const { return timeHours; }
+
+	uint16_t getDays() const { return timeDays; }
+
 private:
 	uint64_t id;
 	uint64_t userId;
