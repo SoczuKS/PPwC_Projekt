@@ -38,12 +38,18 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1011</width>
+        <width>1000</width>
         <height>671</height>
        </rect>
       </property>
       <property name="sizeAdjustPolicy">
        <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="columnCount">
+       <number>4</number>
       </property>
       <attribute name="horizontalHeaderVisible">
        <bool>true</bool>
@@ -51,6 +57,26 @@
       <attribute name="verticalHeaderVisible">
        <bool>false</bool>
       </attribute>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
+     <widget class="QPushButton" name="addCarButton">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>680</y>
+        <width>120</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>add_car</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="bikesTab">
@@ -62,9 +88,18 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1011</width>
+        <width>1000</width>
         <height>671</height>
        </rect>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="columnCount">
+       <number>4</number>
       </property>
       <attribute name="horizontalHeaderVisible">
        <bool>true</bool>
@@ -72,6 +107,23 @@
       <attribute name="verticalHeaderVisible">
        <bool>false</bool>
       </attribute>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
+     <widget class="QPushButton" name="addBikeButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>680</y>
+        <width>120</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>add_bike</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="motorcylesBikes">
@@ -83,9 +135,15 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1011</width>
+        <width>1000</width>
         <height>671</height>
        </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="columnCount">
+       <number>4</number>
       </property>
       <attribute name="horizontalHeaderVisible">
        <bool>true</bool>
@@ -93,6 +151,23 @@
       <attribute name="verticalHeaderVisible">
        <bool>false</bool>
       </attribute>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
+     <widget class="QPushButton" name="addMotorcycleButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>680</y>
+        <width>120</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>add_motorcycle</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="scootersTab">
@@ -104,9 +179,15 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1011</width>
+        <width>1000</width>
         <height>671</height>
        </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="columnCount">
+       <number>4</number>
       </property>
       <attribute name="horizontalHeaderVisible">
        <bool>true</bool>
@@ -114,6 +195,23 @@
       <attribute name="verticalHeaderVisible">
        <bool>false</bool>
       </attribute>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
+     <widget class="QPushButton" name="addScooterButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>680</y>
+        <width>120</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>add_scooter</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="rentsTab">
@@ -125,9 +223,15 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1011</width>
+        <width>1000</width>
         <height>671</height>
        </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="columnCount">
+       <number>4</number>
       </property>
       <attribute name="horizontalHeaderVisible">
        <bool>true</bool>
@@ -135,6 +239,10 @@
       <attribute name="verticalHeaderVisible">
        <bool>false</bool>
       </attribute>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
      </widget>
     </widget>
    </widget>

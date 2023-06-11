@@ -148,10 +148,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="MainWindow.ui">
+    <QtUic Include="qt\MainWindow.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtUic Include="RentWindow.ui">
+    <QtUic Include="qt\RentWindow.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

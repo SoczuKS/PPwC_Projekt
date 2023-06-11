@@ -21,13 +21,22 @@ public:
 	void orderDone();
 
 private slots:
-	void carSelected(int, int);
 	void bikeSelected(int, int);
+	void carSelected(int, int);
 	void motorcycleSelected(int, int);
 	void scooterSelected(int, int);
 
+	void addBike();
+	void addCar();
+	void addMotorcycle();
+	void addScooter();
+
 private:
-	bool isAdmin() const { return User::Role::admin == user.get().getRole(); }
+	bool isAdminLogged() const { return User::Role::admin == user.get().getRole(); }
+
+	void setupUi();
+	void setupAdministrativeUi();
+	void changeAddButtonsState(bool);
 
 	void fillTables() const;
 	void fillBikesTable() const;
@@ -35,6 +44,19 @@ private:
 	void fillMotorcyclesTable() const;
 	void fillScootersTable() const;
 	void fillRentsTable() const;
+
+	void removeBike(int);
+	void removeCar(int);
+	void removeMotorcycle(int);
+	void removeScooter(int);
+
+	void resetBikesTable();
+	void resetCarsTable();
+	void resetMotorcyclesTable();
+	void resetScootersTable();
+	void resetRentsTable();
+
+	bool confirmationDialog(const QString&, const QString&);
 
 	std::reference_wrapper<User> user;
 	Ui::MainWindowClass ui;
@@ -50,4 +72,3 @@ private:
 
 	std::shared_ptr<RentWindow> orderWindow;
 };
-
