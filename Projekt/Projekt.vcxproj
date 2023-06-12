@@ -116,6 +116,7 @@
     <ClCompile Include="src\AddCarDialog.cpp" />
     <ClCompile Include="src\AddMotorcycleDialog.cpp" />
     <ClCompile Include="src\AddScooterDialog.cpp" />
+    <ClCompile Include="src\Rent.cpp" />
     <ClCompile Include="src\RentWindow.cpp" />
     <ClCompile Include="src\Bike.cpp" />
     <ClCompile Include="src\Car.cpp" />

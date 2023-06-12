@@ -1,19 +1,18 @@
 #pragma once
 
-#include <QDialog>
-#include <QMessageBox>
-
 #include "ui_AddScooterDialog.h"
+
+class QMessageBox;
 
 class Scooter;
 
-class AddScooterDialog : public QDialog
+class AddScooterDialog final : public QDialog
 {
 	Q_OBJECT
 
 public:
-	AddScooterDialog(QWidget *parent = nullptr);
-	~AddScooterDialog();
+	AddScooterDialog(QWidget* parent = nullptr);
+	~AddScooterDialog() override = default;
 
 	std::shared_ptr<Scooter> getScooter() const { return scooter; }
 

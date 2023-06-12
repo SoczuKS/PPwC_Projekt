@@ -26,8 +26,5 @@ public:
 			<< ';' << m.id;
 
 		return file;
-	};
-
-private:
-
+	}
 };

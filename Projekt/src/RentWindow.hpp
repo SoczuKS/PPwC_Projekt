@@ -1,7 +1,5 @@
 #pragma once
 
-#include <QMainWindow>
-
 #include "ui_RentWindow.h"
 
 class MainWindow;
@@ -9,17 +7,17 @@ class RentalService;
 class Vehicle;
 class User;
 
-class RentWindow : public QMainWindow
+class RentWindow final : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	RentWindow(RentalService& rentalService, std::shared_ptr<Vehicle> vehicle, std::reference_wrapper<User> user, MainWindow* parent = nullptr);
-	~RentWindow();
+	RentWindow(RentalService&, const std::shared_ptr<Vehicle>&, std::reference_wrapper<User>, MainWindow* = nullptr);
+	~RentWindow() override = default;
 
 private slots:
 	void order();
-	void timeChange(int);
+	void timeChange(int) const;
 
 private:
 	Ui::RentWindowClass ui;

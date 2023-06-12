@@ -14,7 +14,7 @@ class Vehicle;
 class VehicleDatabase final
 {
 public:
-	VehicleDatabase(std::shared_ptr<Logger>) noexcept(false);
+	VehicleDatabase(const std::shared_ptr<Logger>&) noexcept(false);
 	~VehicleDatabase();
 
 	const auto& getBikes() const { return bikes; }

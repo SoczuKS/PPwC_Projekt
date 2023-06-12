@@ -2,45 +2,47 @@
 
 #include <map>
 
+#include <QObject>
+
 #include "MotorizedVehicle.hpp"
 
 class VehicleParametersConverter
 {
 public:
-	static std::string convert(MotorizedVehicle::Drive drive)
+	static std::string convert(const MotorizedVehicle::Drive drive)
 	{
-		return driveToStringMap.at(drive);
+		return DriveToStringMap.at(drive);
 	};
 
-	static std::string convert(MotorizedVehicle::Transmission transmission)
+	static std::string convert(const MotorizedVehicle::Transmission transmission)
 	{
-		return transmissionToStringMap.at(transmission);
+		return TransmissionToStringMap.at(transmission);
 	};
 
-	static std::string convert(MotorizedVehicle::EngineSpec::FuelType fuelType)
+	static std::string convert(const MotorizedVehicle::EngineSpec::FuelType fuelType)
 	{
-		return fuelTypeToStringMap.at(fuelType);
+		return FuelTypeToStringMap.at(fuelType);
 	};
 
 private:
-	inline static const std::map<MotorizedVehicle::Drive, std::string> driveToStringMap =
+	inline static const std::map<MotorizedVehicle::Drive, std::string> DriveToStringMap =
 	{
-		{ MotorizedVehicle::Drive::front, "przedni" },
-		{ MotorizedVehicle::Drive::rear, "tylni" },
-		{ MotorizedVehicle::Drive::all, "na wszystkie kola" }
+		{ MotorizedVehicle::Drive::front, QObject::tr("front").toStdString() },
+		{ MotorizedVehicle::Drive::rear, QObject::tr("rear").toStdString() },
+		{ MotorizedVehicle::Drive::all, QObject::tr("all").toStdString() }
 	};
 
-	inline static const std::map<MotorizedVehicle::Transmission, std::string> transmissionToStringMap =
+	inline static const std::map<MotorizedVehicle::Transmission, std::string> TransmissionToStringMap =
 	{
-		{ MotorizedVehicle::Transmission::manual, "manualna" },
-		{ MotorizedVehicle::Transmission::automatic, "automatyczna" }
+		{ MotorizedVehicle::Transmission::manual, QObject::tr("manual").toStdString() },
+		{ MotorizedVehicle::Transmission::automatic, QObject::tr("automatic").toStdString() }
 	};
 
-	inline static const std::map<MotorizedVehicle::EngineSpec::FuelType, std::string> fuelTypeToStringMap =
+	inline static const std::map<MotorizedVehicle::EngineSpec::FuelType, std::string> FuelTypeToStringMap =
 	{
-		{ MotorizedVehicle::EngineSpec::FuelType::petrol, "benzyna" },
-		{ MotorizedVehicle::EngineSpec::FuelType::petrolAndLPG, "benzyna i LPG" },
-		{ MotorizedVehicle::EngineSpec::FuelType::diesel, "diesel" },
-		{ MotorizedVehicle::EngineSpec::FuelType::electric, "elektryczne" }
+		{ MotorizedVehicle::EngineSpec::FuelType::petrol, QObject::tr("petrol").toStdString() },
+		{ MotorizedVehicle::EngineSpec::FuelType::petrolAndLPG, QObject::tr("petrol_and_lpg").toStdString() },
+		{ MotorizedVehicle::EngineSpec::FuelType::diesel, QObject::tr("diesel").toStdString() },
+		{ MotorizedVehicle::EngineSpec::FuelType::electric, QObject::tr("electric").toStdString() }
 	};
 };

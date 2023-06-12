@@ -8,13 +8,13 @@ std::uniform_int_distribution<uint64_t> Utils::distribution{std::uniform_int_dis
 
 std::vector<std::string> Utils::splitString(const std::string& str, const char delimiter)
 {
-	std::stringstream sstr{str};
+	std::stringstream stream{str};
 	std::vector<std::string> substrings;
 	std::string substring;
 
-	while (sstr.good())
+	while (stream.good())
 	{
-		std::getline(sstr, substring, delimiter);
+		std::getline(stream, substring, delimiter);
 		substrings.push_back(substring);
 	}
 

@@ -13,7 +13,7 @@ public:
 		admin = 100
 	};
 
-	User(uint64_t, std::string, std::string, Role);
+	User(uint64_t, const std::string&, const std::string&, Role);
 
 	uint64_t getId() const { return id; }
 

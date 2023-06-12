@@ -5,7 +5,7 @@
 #include "User.hpp"
 #include "Vehicle.hpp"
 
-RentWindow::RentWindow(RentalService& rentalService, std::shared_ptr<Vehicle> vehicle, std::reference_wrapper<User> user, MainWindow* mainWindow) :
+RentWindow::RentWindow(RentalService& rentalService, const std::shared_ptr<Vehicle>& vehicle, const std::reference_wrapper<User> user, MainWindow* mainWindow) :
 	QMainWindow(mainWindow),
 	rentalService{ rentalService },
 	user{ user },
@@ -23,13 +23,10 @@ RentWindow::RentWindow(RentalService& rentalService, std::shared_ptr<Vehicle> ve
 	connect(ui.daysSelector, &QSpinBox::valueChanged, this, &RentWindow::timeChange);
 }
 
-RentWindow::~RentWindow()
-{}
-
 void RentWindow::order()
 {
-	auto hours = ui.hoursSelector->value();
-	auto days = ui.daysSelector->value();
+	const auto hours = ui.hoursSelector->value();
+	const auto days = ui.daysSelector->value();
 
 	rentalService.rentVehicle(user.get().getId(), vehicle->getId(), hours, days);
 
@@ -38,7 +35,7 @@ void RentWindow::order()
 	close();
 }
 
-void RentWindow::timeChange(int)
+void RentWindow::timeChange(int) const
 {
 	if (ui.hoursSelector->value() >= 24)
 	{

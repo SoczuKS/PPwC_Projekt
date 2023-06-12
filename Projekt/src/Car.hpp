@@ -29,7 +29,4 @@ public:
 
 		return file;
 	}
-
-private:
-
 };

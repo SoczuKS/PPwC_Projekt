@@ -3,7 +3,7 @@
 #include "Logger.hpp"
 #include "User.hpp"
 
-App::App(std::shared_ptr<Logger> logger, QWidget* parent) : QMainWindow(parent), logger{ logger }, userManager{ UserManager(logger) }
+App::App(const std::shared_ptr<Logger>& logger, QWidget* parent) : QMainWindow(parent), logger{ logger }, userManager{ UserManager(logger) }
 {
 	ui.setupUi(this);
 
@@ -30,7 +30,7 @@ void App::login()
 		return;
 	}
 
-	auto user = userManager.login(loginText.toStdString(), passwordText.toStdString());
+	const auto user = userManager.login(loginText.toStdString(), passwordText.toStdString());
 
 	if (not user)
 	{
@@ -52,7 +52,7 @@ void App::registration()
 		return;
 	}
 
-	auto user = userManager.registration(loginText.toStdString(), passwordText.toStdString());
+	const auto user = userManager.registration(loginText.toStdString(), passwordText.toStdString());
 
 	if (not user)
 	{
@@ -63,7 +63,7 @@ void App::registration()
 	loginAndRegistrationSuccessHandler(user.value());
 }
 
-void App::loginAndRegistrationErrorHandler(LoginAndRegistrationError err)
+void App::loginAndRegistrationErrorHandler(const LoginAndRegistrationError err) const
 {
 	ui.errorTextView->setEnabled(true);
 

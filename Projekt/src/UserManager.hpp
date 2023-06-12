@@ -1,8 +1,8 @@
 #pragma once
 
 #include <cstdint>
+#include <memory>
 #include <optional>
-#include <random>
 #include <string>
 #include <vector>
 
@@ -12,7 +12,7 @@ class User;
 class UserManager final
 {
 public:
-	UserManager(std::shared_ptr<Logger>) noexcept(false);
+	UserManager(const std::shared_ptr<Logger>&) noexcept(false);
 	~UserManager();
 
 	std::optional<std::reference_wrapper<User>> registration(const std::string&, const std::string&);

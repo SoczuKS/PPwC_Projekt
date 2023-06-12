@@ -1,19 +1,18 @@
 #pragma once
 
-#include <QDialog>
-#include <QMessageBox>
-
 #include "ui_AddBikeDialog.h"
+
+class QMessageBox;
 
 class Bike;
 
-class AddBikeDialog : public QDialog
+class AddBikeDialog final : public QDialog
 {
 	Q_OBJECT
 
 public:
-	AddBikeDialog(QWidget *parent = nullptr);
-	~AddBikeDialog();
+	AddBikeDialog(QWidget* parent = nullptr);
+	~AddBikeDialog() override = default;
 
 	std::shared_ptr<Bike> getBike() const { return bike; }
 

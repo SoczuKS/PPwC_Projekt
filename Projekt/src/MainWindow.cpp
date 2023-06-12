@@ -20,7 +20,7 @@ namespace
 const int& RemoveButtonColumnIndex = 4;
 }
 
-MainWindow::MainWindow(const std::reference_wrapper<User> user, std::shared_ptr<Logger> logger, QWidget* parent) :
+MainWindow::MainWindow(const std::reference_wrapper<User> user, const std::shared_ptr<Logger>& logger, QWidget* parent) :
 	QMainWindow(parent),
 	user{ user },
 	logger{ logger },
@@ -64,7 +64,7 @@ void MainWindow::setupAdministrativeUi()
 	connect(ui.addScooterButton, &QPushButton::released, this, &MainWindow::addScooter);
 }
 
-void MainWindow::changeAddButtonsState(bool enabled)
+void MainWindow::changeAddButtonsState(const bool enabled) const
 {
 	ui.addBikeButton->setEnabled(enabled);
 	ui.addBikeButton->setVisible(enabled);
@@ -111,7 +111,7 @@ void MainWindow::fillBikesTable() const
 		bikesTable->setItem(i, 3, new QTableWidgetItem(QString::number(bike->getPricePerDay())));
 		if (isAdminLogged())
 		{
-			auto item = new QTableWidgetItem(tr("remove"));
+			const auto item = new QTableWidgetItem(tr("remove"));
 			item->setForeground(QColor(255, 0, 0));
 			bikesTable->setItem(i, 4, item);
 		}
@@ -143,7 +143,7 @@ void MainWindow::fillCarsTable() const
 		carsTable->setItem(i, 3, new QTableWidgetItem(QString::number(car->getPricePerDay())));
 		if (isAdminLogged())
 		{
-			auto item = new QTableWidgetItem(tr("remove"));
+			const auto item = new QTableWidgetItem(tr("remove"));
 			item->setForeground(QColor(255, 0, 0));
 			carsTable->setItem(i, 4, item);
 		}
@@ -175,7 +175,7 @@ void MainWindow::fillMotorcyclesTable() const
 		motorcyclesTable->setItem(i, 3, new QTableWidgetItem(QString::number(motorcycle->getPricePerDay())));
 		if (isAdminLogged())
 		{
-			auto item = new QTableWidgetItem(tr("remove"));
+			const auto item = new QTableWidgetItem(tr("remove"));
 			item->setForeground(QColor(255, 0, 0));
 			motorcyclesTable->setItem(i, 4, item);
 		}
@@ -207,7 +207,7 @@ void MainWindow::fillScootersTable() const
 		scootersTable->setItem(i, 3, new QTableWidgetItem(QString::number(scooter->getPricePerDay())));
 		if (isAdminLogged())
 		{
-			auto item = new QTableWidgetItem(tr("remove"));
+			const auto item = new QTableWidgetItem(tr("remove"));
 			item->setForeground(QColor(255, 0, 0));
 			scootersTable->setItem(i, 4, item);
 		}
@@ -238,12 +238,12 @@ void MainWindow::fillRentsTable() const
 		rentsTable->setItem(i, 3, new QTableWidgetItem(std::to_string(rent.get().getHours()).c_str()));
 	}
 
-	QStringList headers{ tr("vehicle"), tr("start_date"), tr("days"), tr("hours") };
+	const QStringList headers{ tr("vehicle"), tr("start_date"), tr("days"), tr("hours") };
 
 	rentsTable->setHorizontalHeaderLabels(headers);
 }
 
-void MainWindow::bikeSelected(int row, int column)
+void MainWindow::bikeSelected(const int row, const int column)
 {
 	if (RemoveButtonColumnIndex == column)
 	{
@@ -257,7 +257,7 @@ void MainWindow::bikeSelected(int row, int column)
 	orderWindow->show();
 }
 
-void MainWindow::carSelected(int row, int column)
+void MainWindow::carSelected(const int row, const int column)
 {
 	if (RemoveButtonColumnIndex == column)
 	{
@@ -271,7 +271,7 @@ void MainWindow::carSelected(int row, int column)
 	orderWindow->show();
 }
 
-void MainWindow::motorcycleSelected(int row, int column)
+void MainWindow::motorcycleSelected(const int row, const int column)
 {
 	if (RemoveButtonColumnIndex == column)
 	{
@@ -285,7 +285,7 @@ void MainWindow::motorcycleSelected(int row, int column)
 	orderWindow->show();
 }
 
-void MainWindow::scooterSelected(int row, int column)
+void MainWindow::scooterSelected(const int row, const int column)
 {
 	if (RemoveButtonColumnIndex == column)
 	{
@@ -299,12 +299,12 @@ void MainWindow::scooterSelected(int row, int column)
 	orderWindow->show();
 }
 
-void MainWindow::orderDone()
+void MainWindow::orderDone() const
 {
 	resetRentsTable();
 }
 
-void MainWindow::removeBike(int index)
+void MainWindow::removeBike(const int index)
 {
 	if (not isAdminLogged())
 	{
@@ -323,7 +323,7 @@ void MainWindow::removeBike(int index)
 	resetBikesTable();
 }
 
-void MainWindow::removeCar(int index)
+void MainWindow::removeCar(const int index)
 {
 	if (not isAdminLogged())
 	{
@@ -342,7 +342,7 @@ void MainWindow::removeCar(int index)
 	resetCarsTable();
 }
 
-void MainWindow::removeMotorcycle(int index)
+void MainWindow::removeMotorcycle(const int index)
 {
 	if (not isAdminLogged())
 	{
@@ -361,7 +361,7 @@ void MainWindow::removeMotorcycle(int index)
 	resetMotorcyclesTable();
 }
 
-void MainWindow::removeScooter(int index)
+void MainWindow::removeScooter(const int index)
 {
 	if (not isAdminLogged())
 	{
@@ -382,37 +382,36 @@ void MainWindow::removeScooter(int index)
 
 bool MainWindow::confirmationDialog(const QString& title, const QString& text)
 {
-	QMessageBox::StandardButton reply;
-	reply = QMessageBox::question(this, title, text,
-								  QMessageBox::Yes | QMessageBox::No);
+	const QMessageBox::StandardButton reply = QMessageBox::question(this, title, text,
+																	QMessageBox::Yes | QMessageBox::No);
 	return reply == QMessageBox::Yes;
 }
 
-void MainWindow::resetBikesTable()
+void MainWindow::resetBikesTable() const
 {
 	bikesTable->clear();
 	fillBikesTable();
 }
 
-void MainWindow::resetCarsTable()
+void MainWindow::resetCarsTable() const
 {
 	carsTable->clear();
 	fillCarsTable();
 }
 
-void MainWindow::resetMotorcyclesTable()
+void MainWindow::resetMotorcyclesTable() const
 {
 	motorcyclesTable->clear();
 	fillMotorcyclesTable();
 }
 
-void MainWindow::resetScootersTable()
+void MainWindow::resetScootersTable() const
 {
 	scootersTable->clear();
 	fillScootersTable();
 }
 
-void MainWindow::resetRentsTable()
+void MainWindow::resetRentsTable() const
 {
 	rentsTable->clear();
 	fillRentsTable();

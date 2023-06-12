@@ -1,19 +1,17 @@
 #include "AddMotorcycleDialog.hpp"
 
+#include <QMessageBox>
 #include <QPushButton>
 
 #include "Motorcycle.hpp"
 
-AddMotorcycleDialog::AddMotorcycleDialog(QWidget *parent)
-	: QDialog(parent)
+AddMotorcycleDialog::AddMotorcycleDialog(QWidget* parent) : QDialog(parent)
 {
 	ui.setupUi(this);
 
 	connect(ui.buttonBox->button(QDialogButtonBox::Save), &QPushButton::released, this, &AddMotorcycleDialog::finish);
 	connect(ui.buttonBox->button(QDialogButtonBox::Cancel), &QPushButton::released, this, &AddMotorcycleDialog::cancel);
 }
-
-AddMotorcycleDialog::~AddMotorcycleDialog() {}
 
 void AddMotorcycleDialog::finish()
 {
@@ -46,7 +44,7 @@ void AddMotorcycleDialog::finish()
 		MotorizedVehicle::Drive::rear,
 		static_cast<MotorizedVehicle::Transmission>(transmission),
 		MotorizedVehicle::EngineSpec{
-		    capacity,
+			capacity,
 			static_cast<uint16_t>(power),
 			static_cast<MotorizedVehicle::EngineSpec::FuelType>(fuelType)
 		}

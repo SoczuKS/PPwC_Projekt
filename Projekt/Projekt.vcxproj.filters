@@ -118,6 +118,9 @@
     <ClCompile Include="src\AddBikeDialog.cpp">
       <Filter>Source Files\dialogs</Filter>
     </ClCompile>
+    <ClCompile Include="src\Rent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="locale\locale_en.ts">

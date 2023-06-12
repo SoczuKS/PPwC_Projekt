@@ -11,7 +11,7 @@ struct Rent;
 class RentalService final
 {
 public:
-	RentalService(std::shared_ptr<Logger>) noexcept(false);
+	RentalService(const std::shared_ptr<Logger>&) noexcept(false);
 	~RentalService();
 
 	std::vector<std::reference_wrapper<const Rent>> getRentsByUserId(uint64_t) const;

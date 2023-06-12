@@ -6,4 +6,6 @@ Vehicle::Vehicle(const VehicleParameters& params) :
 	pricePerHour{ params.pricePerHour },
 	pricePerDay{ params.pricePerDay },
 	manufacturer{ params.manufacturer },
-	model{ params.model } {}
+	model{ params.model }
+{
+}

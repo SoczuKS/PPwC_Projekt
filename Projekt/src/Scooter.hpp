@@ -24,7 +24,4 @@ public:
 
 		return file;
 	}
-
-private:
-
 };

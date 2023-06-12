@@ -1,19 +1,17 @@
 #include "AddCarDialog.hpp"
 
+#include <QMessageBox>
 #include <QPushButton>
 
 #include "Car.hpp"
 
-AddCarDialog::AddCarDialog(QWidget *parent)
-	: QDialog(parent)
+AddCarDialog::AddCarDialog(QWidget* parent) : QDialog(parent)
 {
 	ui.setupUi(this);
 
 	connect(ui.buttonBox->button(QDialogButtonBox::Save), &QPushButton::released, this, &AddCarDialog::finish);
 	connect(ui.buttonBox->button(QDialogButtonBox::Cancel), &QPushButton::released, this, &AddCarDialog::cancel);
 }
-
-AddCarDialog::~AddCarDialog() {}
 
 void AddCarDialog::finish()
 {

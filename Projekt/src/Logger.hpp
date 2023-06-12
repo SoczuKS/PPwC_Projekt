@@ -1,7 +1,6 @@
 #pragma once
 
 #include <fstream>
-#include <memory>
 #include <string>
 
 class Logger
@@ -14,5 +13,5 @@ public:
 private:
 	std::fstream outputFile;
 
-    static const std::string LogFilename;
+	static const std::string LogFilename;
 };

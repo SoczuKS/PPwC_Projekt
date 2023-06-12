@@ -13,7 +13,7 @@ class App final : public QMainWindow
 	Q_OBJECT
 
 public:
-	App(std::shared_ptr<Logger>, QWidget* = nullptr);
+	App(const std::shared_ptr<Logger>&, QWidget* = nullptr);
 	~App() override = default;
 
 private slots:
@@ -23,7 +23,7 @@ private slots:
 private:
 	enum class LoginAndRegistrationError { emptyField, invalidCredentials, usernameTaken };
 
-	void loginAndRegistrationErrorHandler(LoginAndRegistrationError);
+	void loginAndRegistrationErrorHandler(LoginAndRegistrationError) const;
 	void loginAndRegistrationSuccessHandler(std::reference_wrapper<User>);
 
 	Ui::AppClass ui;

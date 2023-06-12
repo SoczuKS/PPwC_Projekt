@@ -5,16 +5,13 @@
 
 #include "Scooter.hpp"
 
-AddScooterDialog::AddScooterDialog(QWidget *parent)
-	: QDialog(parent)
+AddScooterDialog::AddScooterDialog(QWidget* parent) : QDialog(parent)
 {
 	ui.setupUi(this);
 
 	connect(ui.buttonBox->button(QDialogButtonBox::Save), &QPushButton::released, this, &AddScooterDialog::finish);
 	connect(ui.buttonBox->button(QDialogButtonBox::Cancel), &QPushButton::released, this, &AddScooterDialog::cancel);
 }
-
-AddScooterDialog::~AddScooterDialog() {}
 
 void AddScooterDialog::finish()
 {

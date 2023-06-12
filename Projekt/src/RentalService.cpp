@@ -8,7 +8,7 @@
 
 const std::string RentalService::RentsFilename = "data/rents.csv";
 
-RentalService::RentalService(std::shared_ptr<Logger> logger) : logger{ logger }
+RentalService::RentalService(const std::shared_ptr<Logger>& logger) : logger{ logger }
 {
 	load();
 }
@@ -39,7 +39,7 @@ void RentalService::load()
 			std::stoull(substrings[5]),
 			static_cast<uint16_t>(std::stoi(substrings[1])),
 			static_cast<uint16_t>(std::stoi(substrings[2]))
-		});
+        });
 	}
 }
 

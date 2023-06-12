@@ -1,5 +1,3 @@
-#include <QtWidgets/QApplication>
-#include <QLocale>
 #include <QTranslator>
 
 #include "App.hpp"
@@ -7,7 +5,7 @@
 
 int main(int argc, char* argv[])
 {
-	auto logger = std::make_shared<Logger>();
+	const auto logger = std::make_shared<Logger>();
 	logger->write("App starting...");
 	QApplication a(argc, argv);
 

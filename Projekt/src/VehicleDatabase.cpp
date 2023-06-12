@@ -14,7 +14,7 @@ const std::string VehicleDatabase::CarsDatabaseFilename = "data/cars.csv";
 const std::string VehicleDatabase::MotorcyclesDatabaseFilename = "data/motorcycles.csv";
 const std::string VehicleDatabase::ScootersDatabaseFilename = "data/scooters.csv";
 
-VehicleDatabase::VehicleDatabase(std::shared_ptr<Logger> logger) : logger{ logger }
+VehicleDatabase::VehicleDatabase(const std::shared_ptr<Logger>& logger) : logger{ logger }
 {
 	load();
 }
@@ -50,32 +50,28 @@ void VehicleDatabase::addVehicle(std::shared_ptr<Scooter> scooter)
 
 void VehicleDatabase::removeVehicle(uint64_t id)
 {
-	if (0 < std::erase_if(bikes, [id](const auto& bike)
-	{
+	if (0 < std::erase_if(bikes, [id](const auto& bike) {
 		return id == bike->getId();
 	}))
 	{
 		return;
 	}
 
-	if (0 < std::erase_if(cars, [id](const auto& car)
-	{
+	if (0 < std::erase_if(cars, [id](const auto& car) {
 		return id == car->getId();
 	}))
 	{
 		return;
 	}
 
-	if (0 < std::erase_if(motorcycles, [id](const auto& motorcycle)
-	{
+	if (0 < std::erase_if(motorcycles, [id](const auto& motorcycle) {
 		return id == motorcycle->getId();
 	}))
 	{
 		return;
 	}
 
-	std::erase_if(scooters, [id](const auto& scooter)
-	{
+	std::erase_if(scooters, [id](const auto& scooter) {
 		return id == scooter->getId();
 	});
 }
@@ -265,8 +261,7 @@ void VehicleDatabase::loadScooters()
 
 std::shared_ptr<Bike> VehicleDatabase::getBikeById(uint64_t id) const
 {
-	if (const auto& it = std::ranges::find_if(bikes, [&id](const std::shared_ptr<Bike>& bike)
-	{
+	if (const auto& it = std::ranges::find_if(bikes, [&id](const std::shared_ptr<Bike>& bike) {
 		return id == bike->getId();
 	}); bikes.end() != it)
 	{
@@ -277,8 +272,7 @@ std::shared_ptr<Bike> VehicleDatabase::getBikeById(uint64_t id) const
 
 std::shared_ptr<Car> VehicleDatabase::getCarById(uint64_t id) const
 {
-	if (const auto& it = std::ranges::find_if(cars, [&id](const std::shared_ptr<Car>& car)
-	{
+	if (const auto& it = std::ranges::find_if(cars, [&id](const std::shared_ptr<Car>& car) {
 		return id == car->getId();
 	}); cars.end() != it)
 	{
@@ -289,8 +283,7 @@ std::shared_ptr<Car> VehicleDatabase::getCarById(uint64_t id) const
 
 std::shared_ptr<Motorcycle> VehicleDatabase::getMotorcycleById(uint64_t id) const
 {
-	if (const auto& it = std::ranges::find_if(motorcycles, [&id](const std::shared_ptr<Motorcycle>& motorcycle)
-	{
+	if (const auto& it = std::ranges::find_if(motorcycles, [&id](const std::shared_ptr<Motorcycle>& motorcycle) {
 		return id == motorcycle->getId();
 	}); motorcycles.end() != it)
 	{
@@ -301,8 +294,7 @@ std::shared_ptr<Motorcycle> VehicleDatabase::getMotorcycleById(uint64_t id) cons
 
 std::shared_ptr<Scooter> VehicleDatabase::getScooterById(uint64_t id) const
 {
-	if (const auto& it = std::ranges::find_if(scooters, [&id](const std::shared_ptr<Scooter>& scooter)
-	{
+	if (const auto& it = std::ranges::find_if(scooters, [&id](const std::shared_ptr<Scooter>& scooter) {
 		return id == scooter->getId();
 	}); scooters.end() != it)
 	{
@@ -311,7 +303,7 @@ std::shared_ptr<Scooter> VehicleDatabase::getScooterById(uint64_t id) const
 	return nullptr;
 }
 
-std::shared_ptr<Vehicle> VehicleDatabase::getVehicleById(uint64_t id) const
+std::shared_ptr<Vehicle> VehicleDatabase::getVehicleById(const uint64_t id) const
 {
 	std::shared_ptr<Vehicle> vehicle = getCarById(id);
 	if (vehicle)

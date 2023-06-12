@@ -15,10 +15,10 @@ class MainWindow final : public QMainWindow
 	Q_OBJECT
 
 public:
-	MainWindow(std::reference_wrapper<User>, std::shared_ptr<Logger>, QWidget* = nullptr);
+	MainWindow(std::reference_wrapper<User>, const std::shared_ptr<Logger>&, QWidget* = nullptr);
 	~MainWindow() override = default;
 
-	void orderDone();
+	void orderDone() const;
 
 private slots:
 	void bikeSelected(int, int);
@@ -36,7 +36,7 @@ private:
 
 	void setupUi();
 	void setupAdministrativeUi();
-	void changeAddButtonsState(bool);
+	void changeAddButtonsState(bool) const;
 
 	void fillTables() const;
 	void fillBikesTable() const;
@@ -50,11 +50,11 @@ private:
 	void removeMotorcycle(int);
 	void removeScooter(int);
 
-	void resetBikesTable();
-	void resetCarsTable();
-	void resetMotorcyclesTable();
-	void resetScootersTable();
-	void resetRentsTable();
+	void resetBikesTable() const;
+	void resetCarsTable() const;
+	void resetMotorcyclesTable() const;
+	void resetScootersTable() const;
+	void resetRentsTable() const;
 
 	bool confirmationDialog(const QString&, const QString&);
 

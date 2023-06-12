@@ -5,14 +5,7 @@
 
 struct Rent
 {
-	Rent(const uint64_t rd, const uint64_t uid, const uint64_t vId, const uint64_t sd, const uint16_t th, const uint16_t td) :
-		id{ rd },
-		userId{ uid },
-		vehicleId{ vId },
-		startDate{ sd },
-		timeHours{ th },
-		timeDays{ td }
-	{}
+	Rent(uint64_t rd, uint64_t uid, uint64_t vId, uint64_t sd, uint16_t th, uint16_t td);
 
 	friend std::fstream& operator<<(std::fstream& file, const Rent& r)
 	{

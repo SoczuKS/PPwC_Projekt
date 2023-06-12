@@ -4,4 +4,6 @@ MotorizedVehicle::MotorizedVehicle(const VehicleParameters& vehicleParams, const
 	Vehicle(vehicleParams),
 	drive{ params.drive },
 	transmission{ params.transmission },
-	engineSpec{ params.engineSpec } {}
+	engineSpec{ params.engineSpec }
+{
+}

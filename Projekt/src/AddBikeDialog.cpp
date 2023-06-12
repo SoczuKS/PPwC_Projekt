@@ -5,16 +5,13 @@
 
 #include "Bike.hpp"
 
-AddBikeDialog::AddBikeDialog(QWidget* parent)
-	: QDialog(parent)
+AddBikeDialog::AddBikeDialog(QWidget* parent) : QDialog(parent)
 {
 	ui.setupUi(this);
 
 	connect(ui.buttonBox->button(QDialogButtonBox::Save), &QPushButton::released, this, &AddBikeDialog::finish);
 	connect(ui.buttonBox->button(QDialogButtonBox::Cancel), &QPushButton::released, this, &AddBikeDialog::cancel);
 }
-
-AddBikeDialog::~AddBikeDialog() {}
 
 void AddBikeDialog::finish()
 {
