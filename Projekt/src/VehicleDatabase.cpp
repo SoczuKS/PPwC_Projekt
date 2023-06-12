@@ -26,21 +26,25 @@ VehicleDatabase::~VehicleDatabase()
 
 void VehicleDatabase::addVehicle(std::shared_ptr<Bike> bike)
 {
+	bike->setId(bikes.back()->getId() + 1);
 	bikes.emplace_back(std::move(bike));
 }
 
 void VehicleDatabase::addVehicle(std::shared_ptr<Car> car)
 {
+	car->setId(cars.back()->getId() + 1);
 	cars.emplace_back(std::move(car));
 }
 
 void VehicleDatabase::addVehicle(std::shared_ptr<Motorcycle> motorcycle)
 {
+	motorcycle->setId(motorcycles.back()->getId() + 1);
 	motorcycles.emplace_back(std::move(motorcycle));
 }
 
 void VehicleDatabase::addVehicle(std::shared_ptr<Scooter> scooter)
 {
+	scooter->setId(scooters.back()->getId() + 1);
 	scooters.emplace_back(std::move(scooter));
 }
 

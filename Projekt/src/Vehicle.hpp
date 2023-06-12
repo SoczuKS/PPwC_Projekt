@@ -19,8 +19,12 @@ public:
 	Vehicle(const VehicleParameters&);
 	virtual ~Vehicle() = default;
 
+	void setId(const uint64_t i)
+	{
+		id = i;
+	}
 	uint64_t getId() const
-	{ 
+	{
 		return id;
 	}
 
@@ -72,7 +76,7 @@ public:
 	virtual std::string getDescription() const = 0;
 
 protected:
-	const uint64_t id;
+	uint64_t id;
 	uint16_t productionYear;
 	float pricePerHour;
 	float pricePerDay;

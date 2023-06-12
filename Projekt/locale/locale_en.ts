@@ -2,6 +2,310 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
+    <name>AddBikeDialog</name>
+    <message>
+        <location filename="../src/AddBikeDialog.cpp" line="28"/>
+        <source>error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/AddBikeDialog.cpp" line="28"/>
+        <source>missing_fields</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddBikeDialogClass</name>
+    <message>
+        <location filename="../qt/AddBikeDialog.ui" line="14"/>
+        <source>AddBikeDialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddBikeDialog.ui" line="54"/>
+        <source>price_per_hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddBikeDialog.ui" line="73"/>
+        <source>manufacturer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddBikeDialog.ui" line="111"/>
+        <source>1999</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddBikeDialog.ui" line="130"/>
+        <source>model</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddBikeDialog.ui" line="149"/>
+        <source>price_per_day</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddCarDialog</name>
+    <message>
+        <location filename="../src/AddCarDialog.cpp" line="32"/>
+        <source>error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/AddCarDialog.cpp" line="32"/>
+        <source>missing_fields</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddCarDialogClass</name>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="14"/>
+        <source>AddCarDialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="32"/>
+        <source>1999</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="105"/>
+        <source>transmission</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="109"/>
+        <source>manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="114"/>
+        <source>automatic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="194"/>
+        <source>power</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="232"/>
+        <source>fuel_type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="236"/>
+        <source>petrol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="241"/>
+        <source>petrol_and_lpg</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="246"/>
+        <source>diesel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="251"/>
+        <source>electric</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="290"/>
+        <source>capacity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="309"/>
+        <source>manufacturer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="325"/>
+        <source>drive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="329"/>
+        <source>front</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="334"/>
+        <source>rear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="339"/>
+        <source>all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="271"/>
+        <source>price_per_day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="89"/>
+        <source>model</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddCarDialog.ui" line="51"/>
+        <source>price_per_hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddMotorcycleDialog</name>
+    <message>
+        <location filename="../src/AddMotorcycleDialog.cpp" line="31"/>
+        <source>error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/AddMotorcycleDialog.cpp" line="31"/>
+        <source>missing_fields</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddMotorcycleDialogClass</name>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="14"/>
+        <source>AddMotorcycleDialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="73"/>
+        <source>1999</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="92"/>
+        <source>manufacturer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="124"/>
+        <source>price_per_hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="143"/>
+        <source>model</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="162"/>
+        <source>price_per_day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="206"/>
+        <source>capacity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="247"/>
+        <source>power</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="263"/>
+        <source>transmission</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="267"/>
+        <source>manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="272"/>
+        <source>automatic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="289"/>
+        <source>fuel_type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="293"/>
+        <source>petrol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="298"/>
+        <source>petrol_and_lpg</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="303"/>
+        <source>diesel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddMotorcycleDialog.ui" line="308"/>
+        <source>electric</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddScooterDialog</name>
+    <message>
+        <location filename="../src/AddScooterDialog.cpp" line="28"/>
+        <source>error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/AddScooterDialog.cpp" line="28"/>
+        <source>missing_fields</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddScooterDialogClass</name>
+    <message>
+        <location filename="../qt/AddScooterDialog.ui" line="14"/>
+        <source>AddScooterDialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddScooterDialog.ui" line="51"/>
+        <source>price_per_day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddScooterDialog.ui" line="92"/>
+        <source>manufacturer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddScooterDialog.ui" line="124"/>
+        <source>1999</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddScooterDialog.ui" line="143"/>
+        <source>model</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qt/AddScooterDialog.ui" line="162"/>
+        <source>price_per_hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>App</name>
     <message>
         <location filename="../src/App.cpp" line="73"/>
@@ -55,106 +359,106 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/MainWindow.cpp" line="95"/>
-        <location filename="../src/MainWindow.cpp" line="110"/>
-        <location filename="../src/MainWindow.cpp" line="127"/>
-        <location filename="../src/MainWindow.cpp" line="142"/>
-        <location filename="../src/MainWindow.cpp" line="159"/>
-        <location filename="../src/MainWindow.cpp" line="174"/>
-        <location filename="../src/MainWindow.cpp" line="191"/>
-        <location filename="../src/MainWindow.cpp" line="206"/>
+        <location filename="../src/MainWindow.cpp" line="99"/>
+        <location filename="../src/MainWindow.cpp" line="114"/>
+        <location filename="../src/MainWindow.cpp" line="131"/>
+        <location filename="../src/MainWindow.cpp" line="146"/>
+        <location filename="../src/MainWindow.cpp" line="163"/>
+        <location filename="../src/MainWindow.cpp" line="178"/>
+        <location filename="../src/MainWindow.cpp" line="195"/>
+        <location filename="../src/MainWindow.cpp" line="210"/>
         <source>remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="92"/>
-        <location filename="../src/MainWindow.cpp" line="124"/>
-        <location filename="../src/MainWindow.cpp" line="156"/>
-        <location filename="../src/MainWindow.cpp" line="188"/>
+        <location filename="../src/MainWindow.cpp" line="96"/>
+        <location filename="../src/MainWindow.cpp" line="128"/>
+        <location filename="../src/MainWindow.cpp" line="160"/>
+        <location filename="../src/MainWindow.cpp" line="192"/>
         <source>manufacturer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="92"/>
-        <location filename="../src/MainWindow.cpp" line="124"/>
-        <location filename="../src/MainWindow.cpp" line="156"/>
-        <location filename="../src/MainWindow.cpp" line="188"/>
+        <location filename="../src/MainWindow.cpp" line="96"/>
+        <location filename="../src/MainWindow.cpp" line="128"/>
+        <location filename="../src/MainWindow.cpp" line="160"/>
+        <location filename="../src/MainWindow.cpp" line="192"/>
         <source>model</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="92"/>
-        <location filename="../src/MainWindow.cpp" line="124"/>
-        <location filename="../src/MainWindow.cpp" line="156"/>
-        <location filename="../src/MainWindow.cpp" line="188"/>
+        <location filename="../src/MainWindow.cpp" line="96"/>
+        <location filename="../src/MainWindow.cpp" line="128"/>
+        <location filename="../src/MainWindow.cpp" line="160"/>
+        <location filename="../src/MainWindow.cpp" line="192"/>
         <source>price_per_hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="92"/>
-        <location filename="../src/MainWindow.cpp" line="124"/>
-        <location filename="../src/MainWindow.cpp" line="156"/>
-        <location filename="../src/MainWindow.cpp" line="188"/>
+        <location filename="../src/MainWindow.cpp" line="96"/>
+        <location filename="../src/MainWindow.cpp" line="128"/>
+        <location filename="../src/MainWindow.cpp" line="160"/>
+        <location filename="../src/MainWindow.cpp" line="192"/>
         <source>price_per_day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="237"/>
+        <location filename="../src/MainWindow.cpp" line="241"/>
         <source>vehicle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="237"/>
+        <location filename="../src/MainWindow.cpp" line="241"/>
         <source>start_date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="237"/>
+        <location filename="../src/MainWindow.cpp" line="241"/>
         <source>days</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="237"/>
+        <location filename="../src/MainWindow.cpp" line="241"/>
         <source>hours</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="329"/>
+        <location filename="../src/MainWindow.cpp" line="333"/>
         <source>car_remove_title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="329"/>
+        <location filename="../src/MainWindow.cpp" line="333"/>
         <source>car_remove_question</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="310"/>
+        <location filename="../src/MainWindow.cpp" line="314"/>
         <source>bike_remove_title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="310"/>
+        <location filename="../src/MainWindow.cpp" line="314"/>
         <source>bike_remove_question</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="348"/>
+        <location filename="../src/MainWindow.cpp" line="352"/>
         <source>motorcycle_remove_title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="348"/>
+        <location filename="../src/MainWindow.cpp" line="352"/>
         <source>motorcycle_remove_question</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="367"/>
+        <location filename="../src/MainWindow.cpp" line="371"/>
         <source>scooter_remove_title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="367"/>
+        <location filename="../src/MainWindow.cpp" line="371"/>
         <source>scooter_remove_question</source>
         <translation type="unfinished"></translation>
     </message>

@@ -4,6 +4,10 @@
 #include <QMessageBox>
 #include <QTableWidget>
 
+#include "AddBikeDialog.hpp"
+#include "AddCarDialog.hpp"
+#include "AddMotorcycleDialog.hpp"
+#include "AddScooterDialog.hpp"
 #include "Bike.hpp"
 #include "Car.hpp"
 #include "Motorcycle.hpp"
@@ -13,7 +17,7 @@
 
 namespace
 {
-	const int& removeButtonColumnIndex = 4;
+const int& RemoveButtonColumnIndex = 4;
 }
 
 MainWindow::MainWindow(const std::reference_wrapper<User> user, std::shared_ptr<Logger> logger, QWidget* parent) :
@@ -93,7 +97,7 @@ void MainWindow::fillBikesTable() const
 	if (isAdminLogged())
 	{
 		headers << tr("remove");
-		bikesTable->setColumnCount(removeButtonColumnIndex + 1);
+		bikesTable->setColumnCount(RemoveButtonColumnIndex + 1);
 	}
 
 	bikesTable->setRowCount(bikesCount);
@@ -125,7 +129,7 @@ void MainWindow::fillCarsTable() const
 	if (isAdminLogged())
 	{
 		headers << tr("remove");
-		carsTable->setColumnCount(removeButtonColumnIndex + 1);
+		carsTable->setColumnCount(RemoveButtonColumnIndex + 1);
 	}
 
 	carsTable->setRowCount(carsCount);
@@ -157,7 +161,7 @@ void MainWindow::fillMotorcyclesTable() const
 	if (isAdminLogged())
 	{
 		headers << tr("remove");
-		motorcyclesTable->setColumnCount(removeButtonColumnIndex + 1);
+		motorcyclesTable->setColumnCount(RemoveButtonColumnIndex + 1);
 	}
 
 	motorcyclesTable->setRowCount(motorcyclesCount);
@@ -189,7 +193,7 @@ void MainWindow::fillScootersTable() const
 	if (isAdminLogged())
 	{
 		headers << tr("remove");
-		scootersTable->setColumnCount(removeButtonColumnIndex + 1);
+		scootersTable->setColumnCount(RemoveButtonColumnIndex + 1);
 	}
 
 	scootersTable->setRowCount(scootersCount);
@@ -227,7 +231,7 @@ void MainWindow::fillRentsTable() const
 		const auto& vehicle = vehicleDatabase.getVehicleById(rent.get().getVehicleId());
 
 		timestamp.setSecsSinceEpoch(rent.get().getStartDate());
-		
+
 		rentsTable->setItem(i, 0, new QTableWidgetItem((vehicle->getManufacturer() + " " + vehicle->getModel()).c_str()));
 		rentsTable->setItem(i, 1, new QTableWidgetItem(timestamp.toString(QLocale::system().dateTimeFormat())));
 		rentsTable->setItem(i, 2, new QTableWidgetItem(std::to_string(rent.get().getDays()).c_str()));
@@ -241,7 +245,7 @@ void MainWindow::fillRentsTable() const
 
 void MainWindow::bikeSelected(int row, int column)
 {
-	if (removeButtonColumnIndex == column)
+	if (RemoveButtonColumnIndex == column)
 	{
 		removeBike(row);
 		return;
@@ -255,7 +259,7 @@ void MainWindow::bikeSelected(int row, int column)
 
 void MainWindow::carSelected(int row, int column)
 {
-	if (removeButtonColumnIndex == column)
+	if (RemoveButtonColumnIndex == column)
 	{
 		removeCar(row);
 		return;
@@ -269,7 +273,7 @@ void MainWindow::carSelected(int row, int column)
 
 void MainWindow::motorcycleSelected(int row, int column)
 {
-	if (removeButtonColumnIndex == column)
+	if (RemoveButtonColumnIndex == column)
 	{
 		removeMotorcycle(row);
 		return;
@@ -283,7 +287,7 @@ void MainWindow::motorcycleSelected(int row, int column)
 
 void MainWindow::scooterSelected(int row, int column)
 {
-	if (removeButtonColumnIndex == column)
+	if (RemoveButtonColumnIndex == column)
 	{
 		removeScooter(row);
 		return;
@@ -380,7 +384,7 @@ bool MainWindow::confirmationDialog(const QString& title, const QString& text)
 {
 	QMessageBox::StandardButton reply;
 	reply = QMessageBox::question(this, title, text,
-		QMessageBox::Yes | QMessageBox::No);
+								  QMessageBox::Yes | QMessageBox::No);
 	return reply == QMessageBox::Yes;
 }
 
@@ -416,20 +420,48 @@ void MainWindow::resetRentsTable()
 
 void MainWindow::addBike()
 {
+	AddBikeDialog dialog(this);
+	dialog.setModal(true);
 
+	if (dialog.exec() == QDialog::Accepted)
+	{
+		vehicleDatabase.addVehicle(dialog.getBike());
+		resetBikesTable();
+	}
 }
 
 void MainWindow::addCar()
 {
+	AddCarDialog dialog(this);
+	dialog.setModal(true);
 
+	if (dialog.exec() == QDialog::Accepted)
+	{
+		vehicleDatabase.addVehicle(dialog.getCar());
+		resetCarsTable();
+	}
 }
 
 void MainWindow::addMotorcycle()
 {
+	AddMotorcycleDialog dialog(this);
+	dialog.setModal(true);
 
+	if (dialog.exec() == QDialog::Accepted)
+	{
+		vehicleDatabase.addVehicle(dialog.getMotorcycle());
+		resetMotorcyclesTable();
+	}
 }
 
 void MainWindow::addScooter()
 {
+	AddScooterDialog dialog(this);
+	dialog.setModal(true);
 
+	if (dialog.exec() == QDialog::Accepted)
+	{
+		vehicleDatabase.addVehicle(dialog.getScooter());
+		resetScootersTable();
+	}
 }

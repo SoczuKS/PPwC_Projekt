@@ -27,20 +27,29 @@
     <Filter Include="Source Files\vehicles">
       <UniqueIdentifier>{11190c73-7daf-43a6-b7e2-f0f78715b8b6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Form Files\windows">
+      <UniqueIdentifier>{dccf0bd4-55c5-4f3e-b509-dd99f41ffef9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form Files\dialogs">
+      <UniqueIdentifier>{a4d90f10-01fb-43d6-a5ad-77cf257edf36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dialogs">
+      <UniqueIdentifier>{8651c4ff-6670-46b0-b86e-b1cc3fa64c9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\windows">
+      <UniqueIdentifier>{8def4d78-9b12-4a04-b5ee-4b109ce2e33f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dialogs">
+      <UniqueIdentifier>{809da9eb-53a9-4206-916c-388cae665487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\windows">
+      <UniqueIdentifier>{8c4e1ecc-eb4a-44b8-bc7d-22e2f43c418a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="qt\App.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <QtUic Include="qt\App.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtMoc Include="src\App.hpp">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <ClCompile Include="src\App.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <None Include="media\Projekt.ico">
       <Filter>Resource Files</Filter>
     </None>
@@ -85,14 +94,29 @@
     <ClCompile Include="src\Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\MainWindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\AddCarDialog.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AddMotorcycleDialog.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AddScooterDialog.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MainWindow.cpp">
+      <Filter>Source Files\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\App.cpp">
+      <Filter>Source Files\windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\RentWindow.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AddBikeDialog.cpp">
+      <Filter>Source Files\dialogs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -148,19 +172,49 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="qt\AddCarDialog.ui">
+      <Filter>Form Files\dialogs</Filter>
+    </QtUic>
+    <QtUic Include="qt\AddMotorcycleDialog.ui">
+      <Filter>Form Files\dialogs</Filter>
+    </QtUic>
+    <QtUic Include="qt\AddScooterDialog.ui">
+      <Filter>Form Files\dialogs</Filter>
+    </QtUic>
+    <QtUic Include="qt\App.ui">
+      <Filter>Form Files\windows</Filter>
+    </QtUic>
     <QtUic Include="qt\MainWindow.ui">
-      <Filter>Form Files</Filter>
+      <Filter>Form Files\windows</Filter>
     </QtUic>
     <QtUic Include="qt\RentWindow.ui">
-      <Filter>Form Files</Filter>
+      <Filter>Form Files\windows</Filter>
+    </QtUic>
+    <QtUic Include="qt\AddBikeDialog.ui">
+      <Filter>Form Files\dialogs</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="src\AddCarDialog.hpp">
+      <Filter>Header Files\dialogs</Filter>
+    </QtMoc>
+    <QtMoc Include="src\AddMotorcycleDialog.hpp">
+      <Filter>Header Files\dialogs</Filter>
+    </QtMoc>
+    <QtMoc Include="src\AddScooterDialog.hpp">
+      <Filter>Header Files\dialogs</Filter>
+    </QtMoc>
+    <QtMoc Include="src\App.hpp">
+      <Filter>Header Files\windows</Filter>
+    </QtMoc>
     <QtMoc Include="src\MainWindow.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\windows</Filter>
     </QtMoc>
     <QtMoc Include="src\RentWindow.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\windows</Filter>
+    </QtMoc>
+    <QtMoc Include="src\AddBikeDialog.hpp">
+      <Filter>Header Files\dialogs</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

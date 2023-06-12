@@ -112,6 +112,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\AddBikeDialog.cpp" />
+    <ClCompile Include="src\AddCarDialog.cpp" />
+    <ClCompile Include="src\AddMotorcycleDialog.cpp" />
+    <ClCompile Include="src\AddScooterDialog.cpp" />
     <ClCompile Include="src\RentWindow.cpp" />
     <ClCompile Include="src\Bike.cpp" />
     <ClCompile Include="src\Car.cpp" />
@@ -127,6 +131,10 @@
     <ClCompile Include="src\VehicleDatabase.cpp" />
     <ClCompile Include="src\Vehicle.cpp" />
     <QtRcc Include="qt\App.qrc" />
+    <QtUic Include="qt\AddBikeDialog.ui" />
+    <QtUic Include="qt\AddCarDialog.ui" />
+    <QtUic Include="qt\AddMotorcycleDialog.ui" />
+    <QtUic Include="qt\AddScooterDialog.ui" />
     <QtUic Include="qt\MainWindow.ui" />
     <QtUic Include="qt\App.ui" />
     <QtMoc Include="src\App.hpp" />
@@ -139,6 +147,10 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\RentWindow.hpp" />
+    <QtMoc Include="src\AddCarDialog.hpp" />
+    <QtMoc Include="src\AddMotorcycleDialog.hpp" />
+    <QtMoc Include="src\AddScooterDialog.hpp" />
+    <QtMoc Include="src\AddBikeDialog.hpp" />
     <ClInclude Include="src\Bike.hpp" />
     <ClInclude Include="src\Car.hpp" />
     <QtMoc Include="src\MainWindow.hpp" />
