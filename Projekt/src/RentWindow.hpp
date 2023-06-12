@@ -2,6 +2,7 @@
 
 #include "ui_RentWindow.h"
 
+class Logger;
 class MainWindow;
 class RentalService;
 class Vehicle;
@@ -12,7 +13,7 @@ class RentWindow final : public QMainWindow
 	Q_OBJECT
 
 public:
-	RentWindow(RentalService&, const std::shared_ptr<Vehicle>&, std::reference_wrapper<User>, MainWindow* = nullptr);
+	RentWindow(RentalService&, const std::shared_ptr<Logger>&, const std::shared_ptr<Vehicle>&, std::reference_wrapper<User>, MainWindow* = nullptr);
 	~RentWindow() override = default;
 
 private slots:
@@ -25,4 +26,5 @@ private:
 	std::reference_wrapper<User> user;
 	std::shared_ptr<Vehicle> vehicle;
 	MainWindow* mainWindow;
+	std::shared_ptr<Logger> logger;
 };

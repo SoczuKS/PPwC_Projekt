@@ -10,6 +10,7 @@
 #include "AddScooterDialog.hpp"
 #include "Bike.hpp"
 #include "Car.hpp"
+#include "Logger.hpp"
 #include "Motorcycle.hpp"
 #include "Rent.hpp"
 #include "RentWindow.hpp"
@@ -253,7 +254,7 @@ void MainWindow::bikeSelected(const int row, const int column)
 
 	const auto& bike = vehicleDatabase.getBikes().at(row);
 
-	orderWindow = std::make_unique<RentWindow>(rentalService, bike, user, this);
+	orderWindow = std::make_unique<RentWindow>(rentalService, logger, bike, user, this);
 	orderWindow->show();
 }
 
@@ -267,7 +268,7 @@ void MainWindow::carSelected(const int row, const int column)
 
 	const auto& car = vehicleDatabase.getCars().at(row);
 
-	orderWindow = std::make_unique<RentWindow>(rentalService, car, user, this);
+	orderWindow = std::make_unique<RentWindow>(rentalService, logger, car, user, this);
 	orderWindow->show();
 }
 
@@ -281,7 +282,7 @@ void MainWindow::motorcycleSelected(const int row, const int column)
 
 	const auto& motorcycle = vehicleDatabase.getMotorcycles().at(row);
 
-	orderWindow = std::make_unique<RentWindow>(rentalService, motorcycle, user, this);
+	orderWindow = std::make_unique<RentWindow>(rentalService, logger, motorcycle, user, this);
 	orderWindow->show();
 }
 
@@ -295,7 +296,7 @@ void MainWindow::scooterSelected(const int row, const int column)
 
 	const auto& scooter = vehicleDatabase.getScooters().at(row);
 
-	orderWindow = std::make_unique<RentWindow>(rentalService, scooter, user, this);
+	orderWindow = std::make_unique<RentWindow>(rentalService, logger, scooter, user, this);
 	orderWindow->show();
 }
 
@@ -317,7 +318,7 @@ void MainWindow::removeBike(const int index)
 	}
 
 	const auto& bike = vehicleDatabase.getBikes().at(index);
-
+	logger->write("Trying to remove bike[" + std::to_string(bike->getId()) + "]");
 	vehicleDatabase.removeVehicle(bike->getId());
 
 	resetBikesTable();
@@ -336,7 +337,7 @@ void MainWindow::removeCar(const int index)
 	}
 
 	const auto& car = vehicleDatabase.getCars().at(index);
-
+	logger->write("Trying to remove car[" + std::to_string(car->getId()) + "]");
 	vehicleDatabase.removeVehicle(car->getId());
 
 	resetCarsTable();
@@ -355,7 +356,7 @@ void MainWindow::removeMotorcycle(const int index)
 	}
 
 	const auto& motorcycle = vehicleDatabase.getMotorcycles().at(index);
-
+	logger->write("Trying to remove motorcycle[" + std::to_string(motorcycle->getId()) + "]");
 	vehicleDatabase.removeVehicle(motorcycle->getId());
 
 	resetMotorcyclesTable();
@@ -374,7 +375,7 @@ void MainWindow::removeScooter(const int index)
 	}
 
 	const auto& scooter = vehicleDatabase.getScooters().at(index);
-
+	logger->write("Trying to remove scooter[" + std::to_string(scooter->getId()) + "]");
 	vehicleDatabase.removeVehicle(scooter->getId());
 
 	resetScootersTable();

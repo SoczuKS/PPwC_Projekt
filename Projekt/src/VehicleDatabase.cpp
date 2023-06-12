@@ -5,6 +5,7 @@
 
 #include "Bike.hpp"
 #include "Car.hpp"
+#include "Logger.hpp"
 #include "Motorcycle.hpp"
 #include "Scooter.hpp"
 #include "Utils.hpp"
@@ -27,24 +28,28 @@ VehicleDatabase::~VehicleDatabase()
 void VehicleDatabase::addVehicle(std::shared_ptr<Bike> bike)
 {
 	bike->setId(bikes.back()->getId() + 1);
+	logger->write("New bike [" + bike->getModel() + "] added");
 	bikes.emplace_back(std::move(bike));
 }
 
 void VehicleDatabase::addVehicle(std::shared_ptr<Car> car)
 {
 	car->setId(cars.back()->getId() + 1);
+	logger->write("New car [" + car->getModel() + "] added");
 	cars.emplace_back(std::move(car));
 }
 
 void VehicleDatabase::addVehicle(std::shared_ptr<Motorcycle> motorcycle)
 {
 	motorcycle->setId(motorcycles.back()->getId() + 1);
+	logger->write("New motorcycle [" + motorcycle->getModel() + "] added");
 	motorcycles.emplace_back(std::move(motorcycle));
 }
 
 void VehicleDatabase::addVehicle(std::shared_ptr<Scooter> scooter)
 {
 	scooter->setId(scooters.back()->getId() + 1);
+	logger->write("New scooter [" + scooter->getModel() + "] added");
 	scooters.emplace_back(std::move(scooter));
 }
 
@@ -78,62 +83,75 @@ void VehicleDatabase::removeVehicle(uint64_t id)
 
 void VehicleDatabase::save() const
 {
+	logger->write("Saving vehicles...");
 	saveBikes();
 	saveCars();
 	saveMotorcycles();
 	saveScooters();
+	logger->write("All vehicles saved");
 }
 
 void VehicleDatabase::saveBikes() const
 {
+	logger->write("Saving bikes...");
 	std::fstream file(BikesDatabaseFilename, std::ios::out);
 
 	for (const auto& bike : bikes)
 	{
 		file << *bike << '\n';
 	}
+	logger->write("Saved bikes");
 }
 
 void VehicleDatabase::saveCars() const
 {
+	logger->write("Saving bikes...");
 	std::fstream file(CarsDatabaseFilename, std::ios::out);
 
 	for (const auto& car : cars)
 	{
 		file << *car << '\n';
 	}
+	logger->write("Saved cars");
 }
 
 void VehicleDatabase::saveMotorcycles() const
 {
+	logger->write("Saving motorcycles...");
 	std::fstream file(MotorcyclesDatabaseFilename, std::ios::out);
 
 	for (const auto& motorcycle : motorcycles)
 	{
 		file << *motorcycle << '\n';
 	}
+	logger->write("Saved motorcycles");
 }
 
 void VehicleDatabase::saveScooters() const
 {
+	logger->write("Saving scooters...");
 	std::fstream file(ScootersDatabaseFilename, std::ios::out);
 
 	for (const auto& scooter : scooters)
 	{
 		file << *scooter << '\n';
 	}
+	logger->write("Saved scooters...");
 }
 
 void VehicleDatabase::load()
 {
+	logger->write("Loading vehicles...");
 	loadBikes();
 	loadCars();
 	loadMotorcycles();
 	loadScooters();
+	logger->write("Vehicles loaded");
 }
 
 void VehicleDatabase::loadBikes()
 {
+	logger->write("Loading bikes...");
 	std::fstream file(BikesDatabaseFilename, std::ios::in);
 	std::string line;
 
@@ -157,10 +175,12 @@ void VehicleDatabase::loadBikes()
 
 		bikes.emplace_back(std::make_shared<Bike>(vehicleParams));
 	}
+	logger->write("Bikes loaded");
 }
 
 void VehicleDatabase::loadCars()
 {
+	logger->write("Loading cars...");
 	std::fstream file(CarsDatabaseFilename, std::ios::in);
 	std::string line;
 
@@ -194,10 +214,12 @@ void VehicleDatabase::loadCars()
 
 		cars.emplace_back(std::make_shared<Car>(vehicleParams, motorizedVehicleParams));
 	}
+	logger->write("Cars loaded");
 }
 
 void VehicleDatabase::loadMotorcycles()
 {
+	logger->write("Loading motorcycles...");
 	std::fstream file(MotorcyclesDatabaseFilename, std::ios::in);
 	std::string line;
 
@@ -230,10 +252,12 @@ void VehicleDatabase::loadMotorcycles()
 
 		motorcycles.emplace_back(std::make_shared<Motorcycle>(vehicleParams, params));
 	}
+	logger->write("Motorcycles loaded");
 }
 
 void VehicleDatabase::loadScooters()
 {
+	logger->write("Loading scooters...");
 	std::fstream file(ScootersDatabaseFilename, std::ios::in);
 	std::string line;
 
@@ -257,6 +281,7 @@ void VehicleDatabase::loadScooters()
 
 		scooters.emplace_back(std::make_shared<Scooter>(vehicleParams));
 	}
+	logger->write("Scooters loaded");
 }
 
 std::shared_ptr<Bike> VehicleDatabase::getBikeById(uint64_t id) const

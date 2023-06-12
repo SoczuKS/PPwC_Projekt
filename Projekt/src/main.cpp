@@ -17,5 +17,8 @@ int main(int argc, char* argv[])
 
 	App app(logger);
 	app.show();
-	return a.exec();
+
+	const auto appResult = a.exec();
+	logger->write("App finished with status" + std::to_string(appResult));
+	return appResult;
 }

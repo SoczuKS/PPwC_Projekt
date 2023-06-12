@@ -3,6 +3,7 @@
 #include <fstream>
 #include <ranges>
 
+#include "Logger.hpp"
 #include "Rent.hpp"
 #include "Utils.hpp"
 
@@ -20,6 +21,7 @@ RentalService::~RentalService()
 
 void RentalService::load()
 {
+	logger->write("Loading rents...");
 	std::fstream file(RentsFilename, std::ios::in);
 	std::string line;
 
@@ -41,16 +43,19 @@ void RentalService::load()
 			static_cast<uint16_t>(std::stoi(substrings[2]))
         });
 	}
+	logger->write("Rents loaded");
 }
 
 void RentalService::save() const
 {
+	logger->write("Saving rents...");
 	std::fstream file(RentsFilename, std::ios::out);
 
 	for (const auto& rent : rents)
 	{
 		file << rent << '\n';
 	}
+	logger->write("Rents saved");
 }
 
 void RentalService::rentVehicle(uint64_t userId, uint64_t vehicleId, uint16_t timeHours, uint16_t timeDays, uint64_t startDate)

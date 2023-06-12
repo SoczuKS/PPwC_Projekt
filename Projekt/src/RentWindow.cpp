@@ -1,16 +1,18 @@
 #include "RentWindow.hpp"
 
+#include "Logger.hpp"
 #include "MainWindow.hpp"
 #include "RentalService.hpp"
 #include "User.hpp"
 #include "Vehicle.hpp"
 
-RentWindow::RentWindow(RentalService& rentalService, const std::shared_ptr<Vehicle>& vehicle, const std::reference_wrapper<User> user, MainWindow* mainWindow) :
+RentWindow::RentWindow(RentalService& rentalService, const std::shared_ptr<Logger>& logger, const std::shared_ptr<Vehicle>& vehicle, const std::reference_wrapper<User> user, MainWindow* mainWindow) :
 	QMainWindow(mainWindow),
 	rentalService{ rentalService },
 	user{ user },
 	vehicle{ vehicle },
-	mainWindow{ mainWindow }
+	mainWindow{ mainWindow },
+    logger{ logger }
 {
 	ui.setupUi(this);
 
@@ -29,6 +31,8 @@ void RentWindow::order()
 	const auto days = ui.daysSelector->value();
 
 	rentalService.rentVehicle(user.get().getId(), vehicle->getId(), hours, days);
+
+	logger->write("User " + user.get().getUsername() + " rented " + vehicle->getModel() + " for " + std::to_string(days) + " days and " + std::to_string(hours) + "hours");
 
 	mainWindow->orderDone();
 

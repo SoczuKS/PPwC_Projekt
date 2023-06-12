@@ -288,22 +288,22 @@
 <context>
     <name>App</name>
     <message>
-        <location filename="../src/App.cpp" line="73"/>
+        <location filename="../src/App.cpp" line="77"/>
         <source>empty_field</source>
         <translation>Please fill both fields</translation>
     </message>
     <message>
-        <location filename="../src/App.cpp" line="77"/>
+        <location filename="../src/App.cpp" line="81"/>
         <source>invalid_credentials</source>
         <translation>Invalid credentials</translation>
     </message>
     <message>
-        <location filename="../src/App.cpp" line="81"/>
+        <location filename="../src/App.cpp" line="85"/>
         <source>username_taken</source>
         <translation>Username taken</translation>
     </message>
     <message>
-        <location filename="../src/App.cpp" line="85"/>
+        <location filename="../src/App.cpp" line="89"/>
         <source>unknown_error</source>
         <translation>Unknown error</translation>
     </message>
@@ -339,106 +339,106 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/MainWindow.cpp" line="99"/>
-        <location filename="../src/MainWindow.cpp" line="114"/>
-        <location filename="../src/MainWindow.cpp" line="131"/>
-        <location filename="../src/MainWindow.cpp" line="146"/>
-        <location filename="../src/MainWindow.cpp" line="163"/>
-        <location filename="../src/MainWindow.cpp" line="178"/>
-        <location filename="../src/MainWindow.cpp" line="195"/>
-        <location filename="../src/MainWindow.cpp" line="210"/>
+        <location filename="../src/MainWindow.cpp" line="100"/>
+        <location filename="../src/MainWindow.cpp" line="115"/>
+        <location filename="../src/MainWindow.cpp" line="132"/>
+        <location filename="../src/MainWindow.cpp" line="147"/>
+        <location filename="../src/MainWindow.cpp" line="164"/>
+        <location filename="../src/MainWindow.cpp" line="179"/>
+        <location filename="../src/MainWindow.cpp" line="196"/>
+        <location filename="../src/MainWindow.cpp" line="211"/>
         <source>remove</source>
         <translation>remove</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="96"/>
-        <location filename="../src/MainWindow.cpp" line="128"/>
-        <location filename="../src/MainWindow.cpp" line="160"/>
-        <location filename="../src/MainWindow.cpp" line="192"/>
+        <location filename="../src/MainWindow.cpp" line="97"/>
+        <location filename="../src/MainWindow.cpp" line="129"/>
+        <location filename="../src/MainWindow.cpp" line="161"/>
+        <location filename="../src/MainWindow.cpp" line="193"/>
         <source>manufacturer</source>
         <translation>manufacturer</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="96"/>
-        <location filename="../src/MainWindow.cpp" line="128"/>
-        <location filename="../src/MainWindow.cpp" line="160"/>
-        <location filename="../src/MainWindow.cpp" line="192"/>
+        <location filename="../src/MainWindow.cpp" line="97"/>
+        <location filename="../src/MainWindow.cpp" line="129"/>
+        <location filename="../src/MainWindow.cpp" line="161"/>
+        <location filename="../src/MainWindow.cpp" line="193"/>
         <source>model</source>
         <translation>model</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="96"/>
-        <location filename="../src/MainWindow.cpp" line="128"/>
-        <location filename="../src/MainWindow.cpp" line="160"/>
-        <location filename="../src/MainWindow.cpp" line="192"/>
+        <location filename="../src/MainWindow.cpp" line="97"/>
+        <location filename="../src/MainWindow.cpp" line="129"/>
+        <location filename="../src/MainWindow.cpp" line="161"/>
+        <location filename="../src/MainWindow.cpp" line="193"/>
         <source>price_per_hour</source>
         <translation>price per hour</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="96"/>
-        <location filename="../src/MainWindow.cpp" line="128"/>
-        <location filename="../src/MainWindow.cpp" line="160"/>
-        <location filename="../src/MainWindow.cpp" line="192"/>
+        <location filename="../src/MainWindow.cpp" line="97"/>
+        <location filename="../src/MainWindow.cpp" line="129"/>
+        <location filename="../src/MainWindow.cpp" line="161"/>
+        <location filename="../src/MainWindow.cpp" line="193"/>
         <source>price_per_day</source>
         <translation>price per day</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="241"/>
+        <location filename="../src/MainWindow.cpp" line="242"/>
         <source>vehicle</source>
         <translation>vehicle</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="241"/>
+        <location filename="../src/MainWindow.cpp" line="242"/>
         <source>start_date</source>
         <translation>start date</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="241"/>
+        <location filename="../src/MainWindow.cpp" line="242"/>
         <source>days</source>
         <translation>days</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="241"/>
+        <location filename="../src/MainWindow.cpp" line="242"/>
         <source>hours</source>
         <translation>hours</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="333"/>
+        <location filename="../src/MainWindow.cpp" line="334"/>
         <source>car_remove_title</source>
         <translation>remove car</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="333"/>
+        <location filename="../src/MainWindow.cpp" line="334"/>
         <source>car_remove_question</source>
         <translation>remove car</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="314"/>
+        <location filename="../src/MainWindow.cpp" line="315"/>
         <source>bike_remove_title</source>
         <translation>remove bike</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="314"/>
+        <location filename="../src/MainWindow.cpp" line="315"/>
         <source>bike_remove_question</source>
         <translation>remove bike</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="352"/>
+        <location filename="../src/MainWindow.cpp" line="353"/>
         <source>motorcycle_remove_title</source>
         <translation>remove motorcycle</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="352"/>
+        <location filename="../src/MainWindow.cpp" line="353"/>
         <source>motorcycle_remove_question</source>
         <translation>remove motorcycle</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="371"/>
+        <location filename="../src/MainWindow.cpp" line="372"/>
         <source>scooter_remove_title</source>
         <translation>remove scooter</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="371"/>
+        <location filename="../src/MainWindow.cpp" line="372"/>
         <source>scooter_remove_question</source>
         <translation>remove scooter</translation>
     </message>

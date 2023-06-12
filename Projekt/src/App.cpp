@@ -26,6 +26,7 @@ void App::login()
 
 	if (loginText.isEmpty() or passwordText.isEmpty())
 	{
+		logger->write("Empty login or password field");
 		loginAndRegistrationErrorHandler(LoginAndRegistrationError::emptyField);
 		return;
 	}
@@ -34,6 +35,7 @@ void App::login()
 
 	if (not user)
 	{
+		logger->write("Invalid credentials");
 		loginAndRegistrationErrorHandler(LoginAndRegistrationError::invalidCredentials);
 		return;
 	}
@@ -48,6 +50,7 @@ void App::registration()
 
 	if (loginText.isEmpty() or passwordText.isEmpty())
 	{
+		logger->write("Empty login or password field");
 		loginAndRegistrationErrorHandler(LoginAndRegistrationError::emptyField);
 		return;
 	}
@@ -56,6 +59,7 @@ void App::registration()
 
 	if (not user)
 	{
+		logger->write("Username taken");
 		loginAndRegistrationErrorHandler(LoginAndRegistrationError::usernameTaken);
 		return;
 	}
@@ -88,6 +92,7 @@ void App::loginAndRegistrationErrorHandler(const LoginAndRegistrationError err) 
 
 void App::loginAndRegistrationSuccessHandler(std::reference_wrapper<User> user)
 {
+	logger->write("User " + user.get().getUsername() + " logged in successfully");
 	mainWindow = std::make_unique<MainWindow>(user, logger);
 	mainWindow->show();
 	close();
