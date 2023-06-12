@@ -9,5 +9,4 @@ Bike::Bike(const VehicleParameters& params) : Vehicle(params) {}
 std::string Bike::getDescription() const
 {
 	return QObject::tr("bike_description").arg(model.c_str()).arg(manufacturer.c_str()).arg(productionYear).toStdString();
-	return { model + " został wyprodukowany przez firmę: " + manufacturer + " w roku: " + std::to_string(productionYear) };
 }

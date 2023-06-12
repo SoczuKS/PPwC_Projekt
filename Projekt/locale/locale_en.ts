@@ -499,69 +499,76 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="30"/>
+        <location filename="../src/Converters.cpp" line="11"/>
         <source>front</source>
-        <translation type="unfinished">front</translation>
+        <translation>front</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="31"/>
+        <location filename="../src/Converters.cpp" line="12"/>
         <source>rear</source>
-        <translation type="unfinished">rear</translation>
+        <translation>rear</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="32"/>
+        <location filename="../src/Converters.cpp" line="13"/>
         <source>all</source>
-        <translation type="unfinished">all wheel</translation>
+        <translation>all wheel</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="37"/>
+        <location filename="../src/Converters.cpp" line="14"/>
+        <location filename="../src/Converters.cpp" line="24"/>
+        <location filename="../src/Converters.cpp" line="36"/>
+        <source>undefined</source>
+        <translation>undefined</translation>
+    </message>
+    <message>
+        <location filename="../src/Converters.cpp" line="22"/>
         <source>manual</source>
-        <translation type="unfinished">manual</translation>
+        <translation>manual</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="38"/>
+        <location filename="../src/Converters.cpp" line="23"/>
         <source>automatic</source>
-        <translation type="unfinished">automatic</translation>
+        <translation>automatic</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="43"/>
+        <location filename="../src/Converters.cpp" line="32"/>
         <source>petrol</source>
-        <translation type="unfinished">petrol</translation>
+        <translation>petrol</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="44"/>
+        <location filename="../src/Converters.cpp" line="33"/>
         <source>petrol_and_lpg</source>
-        <translation type="unfinished">petrol and lpg</translation>
+        <translation>petrol and lpg</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="45"/>
+        <location filename="../src/Converters.cpp" line="34"/>
         <source>diesel</source>
-        <translation type="unfinished">diesel</translation>
+        <translation>diesel</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="46"/>
+        <location filename="../src/Converters.cpp" line="35"/>
         <source>electric</source>
-        <translation type="unfinished">electric</translation>
+        <translation>electric</translation>
     </message>
     <message>
         <location filename="../src/Bike.cpp" line="11"/>
         <source>bike_description</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 has been made by manufacturer called %2 in year %3</translation>
     </message>
     <message>
         <location filename="../src/Car.cpp" line="13"/>
         <source>car_description</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 has been made by manufacturer called %2 in year %3 it&apos;s power is %4 it&apos;s drive is %5 with %6 this car runs on %7</translation>
     </message>
     <message>
-        <location filename="../src/Motorcycle.cpp" line="11"/>
+        <location filename="../src/Motorcycle.cpp" line="13"/>
         <source>motorcycle_description</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 has been made by manufacturer called %2 in year %3 it&apos;s power is %4</translation>
     </message>
     <message>
         <location filename="../src/Scooter.cpp" line="11"/>
         <source>scooter_description</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 has been made by manufacturer called %2 in year %3</translation>
     </message>
 </context>
 <context>

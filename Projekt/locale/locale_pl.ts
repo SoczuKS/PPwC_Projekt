@@ -499,69 +499,76 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="30"/>
+        <location filename="../src/Converters.cpp" line="11"/>
         <source>front</source>
-        <translation type="unfinished">przedni</translation>
+        <translation>przedni</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="31"/>
+        <location filename="../src/Converters.cpp" line="12"/>
         <source>rear</source>
-        <translation type="unfinished">tylny</translation>
+        <translation>tylny</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="32"/>
+        <location filename="../src/Converters.cpp" line="13"/>
         <source>all</source>
-        <translation type="unfinished">4WD</translation>
+        <translation>4WD</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="37"/>
+        <location filename="../src/Converters.cpp" line="14"/>
+        <location filename="../src/Converters.cpp" line="24"/>
+        <location filename="../src/Converters.cpp" line="36"/>
+        <source>undefined</source>
+        <translation>niezdefiniowane</translation>
+    </message>
+    <message>
+        <location filename="../src/Converters.cpp" line="22"/>
         <source>manual</source>
-        <translation type="unfinished">manualna</translation>
+        <translation>manualna</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="38"/>
+        <location filename="../src/Converters.cpp" line="23"/>
         <source>automatic</source>
-        <translation type="unfinished">automatyczna</translation>
+        <translation>automatyczna</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="43"/>
+        <location filename="../src/Converters.cpp" line="32"/>
         <source>petrol</source>
-        <translation type="unfinished">benzyna</translation>
+        <translation>benzyna</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="44"/>
+        <location filename="../src/Converters.cpp" line="33"/>
         <source>petrol_and_lpg</source>
-        <translation type="unfinished">benzyna z LPG</translation>
+        <translation>benzyna z LPG</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="45"/>
+        <location filename="../src/Converters.cpp" line="34"/>
         <source>diesel</source>
-        <translation type="unfinished">diesel</translation>
+        <translation>diesel</translation>
     </message>
     <message>
-        <location filename="../src/VehicleParametersConverter.hpp" line="46"/>
+        <location filename="../src/Converters.cpp" line="35"/>
         <source>electric</source>
-        <translation type="unfinished">prąd</translation>
+        <translation>prąd</translation>
     </message>
     <message>
         <location filename="../src/Bike.cpp" line="11"/>
         <source>bike_description</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 został wyprodukowany przez firmę %2 w roku %3</translation>
     </message>
     <message>
         <location filename="../src/Car.cpp" line="13"/>
         <source>car_description</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 został wyprodukowany przez firmę %2 w roku %3 posiada moc %4 oraz napęd %5 z %6 jest to samochód na %7</translation>
     </message>
     <message>
-        <location filename="../src/Motorcycle.cpp" line="11"/>
+        <location filename="../src/Motorcycle.cpp" line="13"/>
         <source>motorcycle_description</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 został wyprodukowany przez firmę %2 w roku %3 posiada moc o wielkości %4</translation>
     </message>
     <message>
         <location filename="../src/Scooter.cpp" line="11"/>
         <source>scooter_description</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 został wyprodukowany przez firmę %2 w roku %3</translation>
     </message>
 </context>
 <context>

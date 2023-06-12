@@ -2,7 +2,9 @@
 
 #include <string>
 
-#include "VehicleParametersConverter.hpp"
+#include <QObject>
+
+#include "Converters.hpp"
 
 Motorcycle::Motorcycle(const VehicleParameters& vehicleParams, const MotorizedVehicleParameters& motorizedVehicleParams) : MotorizedVehicle(vehicleParams, motorizedVehicleParams) {}
 
@@ -13,10 +15,7 @@ std::string Motorcycle::getDescription() const
 		.arg(manufacturer.c_str())
 		.arg(productionYear)
 		.arg(engineSpec.power)
-		.arg(VehicleParametersConverter::convert(transmission).c_str())
-		.arg(VehicleParametersConverter::convert(engineSpec.fuelType).c_str())
+		.arg(converters::toString(transmission).c_str())
+		.arg(converters::toString(engineSpec.fuelType).c_str())
 		.toStdString();
-
-	return { model + "został wyprodukowany przez firmę: " + manufacturer + " w roku: " + std::to_string(productionYear) +
-		" posiada moc o wielkości: " + std::to_string(engineSpec.power) };
 }

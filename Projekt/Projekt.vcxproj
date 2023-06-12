@@ -116,6 +116,7 @@
     <ClCompile Include="src\AddCarDialog.cpp" />
     <ClCompile Include="src\AddMotorcycleDialog.cpp" />
     <ClCompile Include="src\AddScooterDialog.cpp" />
+    <ClCompile Include="src\Converters.cpp" />
     <ClCompile Include="src\Rent.cpp" />
     <ClCompile Include="src\RentWindow.cpp" />
     <ClCompile Include="src\Bike.cpp" />
@@ -155,7 +156,7 @@
     <ClInclude Include="src\Bike.hpp" />
     <ClInclude Include="src\Car.hpp" />
     <QtMoc Include="src\MainWindow.hpp" />
-    <ClInclude Include="src\VehicleParametersConverter.hpp" />
+    <ClInclude Include="src\Converters.hpp" />
     <ClInclude Include="src\Logger.hpp" />
     <ClInclude Include="src\Motorcycle.hpp" />
     <ClInclude Include="src\MotorizedVehicle.hpp" />
